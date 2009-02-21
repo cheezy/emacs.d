@@ -1,0 +1,4 @@
+#name: should ==
+# --
+${1:target}.should == ${2:value}
+$0

@@ -1,0 +1,5 @@
+#name: describe Type do ... end
+# --
+describe ${1:Type} do
+$0$>
+end

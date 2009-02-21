@@ -1,0 +1,5 @@
+#name: describe "string" do ... end
+# --
+describe "${1:subject}" do
+$0$>
+end

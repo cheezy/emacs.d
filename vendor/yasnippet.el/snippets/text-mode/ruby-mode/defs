@@ -1,0 +1,5 @@
+#name : def self.<method> ... do
+# --
+def self.${1:method name}
+$0$>
+end

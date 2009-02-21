@@ -1,0 +1,4 @@
+#name: should_receive
+# --
+${1:mock}.should_receive(:${2:message})$3
+$0

@@ -1,0 +1,4 @@
+#name - <% form_for ... %>
+# --
+<% form_for :${1:object}, :url => { :action => :${2:action} } do | f | %>
+<% end %>

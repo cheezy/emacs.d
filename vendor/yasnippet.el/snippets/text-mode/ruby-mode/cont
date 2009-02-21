@@ -1,0 +1,5 @@
+#name : context "desc" do ... end
+# --
+context "${1:the context}" do
+$0$>
+end
