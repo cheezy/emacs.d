@@ -39,7 +39,6 @@
 (require 'textmate)
 (textmate-mode)
 (require 'whitespace)
-;;(add-hook 'ruby-mode-hook 'whitespace-mode)
 
 ;; Major Modes
 ;; Javascript
