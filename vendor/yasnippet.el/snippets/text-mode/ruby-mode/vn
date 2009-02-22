@@ -1,3 +1,4 @@
 #name : validates_numericality_of ...
+#group : rails validation
 # --
 validates_numericality_of :${1:attribute}$0$>

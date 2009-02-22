@@ -1,4 +1,5 @@
 #name : def self.<method> ... do
+#group : definitions
 # --
 def self.${1:method name}
 $0$>

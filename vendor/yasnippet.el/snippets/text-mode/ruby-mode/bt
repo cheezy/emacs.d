@@ -1,3 +1,4 @@
 #name : belongs_to ...
+#group : rails model
 # --
 belongs_to :${1:what}

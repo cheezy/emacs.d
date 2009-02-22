@@ -1,3 +1,4 @@
 #name : :key => "value"
+#group : control structure
 # --
 :${1:key} => "${2:value}"$0

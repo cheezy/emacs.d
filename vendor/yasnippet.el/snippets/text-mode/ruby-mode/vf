@@ -1,3 +1,4 @@
 #name : validates_format_of ...
+#group : rails validation
 # --
 validates_format_of :${1:attribute}, :with => %r{${2:value}}i, :message => "${3:is valid}"$0$>

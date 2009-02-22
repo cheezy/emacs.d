@@ -1,4 +1,5 @@
 #name: before(each) do ... end
+#group : rspec
 # --
 before(:${1:each}) do
 $0$>

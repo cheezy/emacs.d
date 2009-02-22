@@ -1,4 +1,5 @@
 #name : module ... end
+#group : definitions
 # --
 module ${1:name}
 $0$>

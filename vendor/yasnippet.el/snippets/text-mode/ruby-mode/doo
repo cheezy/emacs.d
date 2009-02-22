@@ -1,5 +1,6 @@
 #name : do |obj| ... end
+#group : control structure
 # --
-do |${1:obj}
+do |${1:obj}|
 $1.$0$>
 end

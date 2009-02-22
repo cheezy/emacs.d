@@ -1,3 +1,4 @@
 #name : has_many ..., :through =>
+#group : rails model
 # --
 has_many :${1:what}, :through => :${2:other}

@@ -1,4 +1,5 @@
 #name: should_not ==
+#group : rspec
 # --
 ${1:target}.should_not == ${2:value}
 $0

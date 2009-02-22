@@ -1,4 +1,5 @@
 #name: describe Type do ... end
+#group : rspec
 # --
 describe ${1:Type} do
 $0$>

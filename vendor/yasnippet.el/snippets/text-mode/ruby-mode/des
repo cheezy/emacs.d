@@ -1,4 +1,5 @@
 #name: describe "string" do ... end
+#group : rspec
 # --
 describe "${1:subject}" do
 $0$>
