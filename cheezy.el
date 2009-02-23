@@ -103,7 +103,7 @@
 
 (global-set-key [(meta shift right)] 'ido-switch-buffer)
 (global-set-key [(meta shift up)] 'recentf-ido-find-file)
-(global-set-key [(meta-shift-down)] 'ido-find-file)
+(global-set-key [(meta shift down)] 'ido-find-file)
 (global-set-key [(meta shift left)] 'magit-status)
 
 (global-set-key [(control \])] 'indent-rigidly)
