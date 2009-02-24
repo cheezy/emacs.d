@@ -1,5 +1,5 @@
 #name : lambda do ... end
-#group : control
+#group : control structure
 # --
 lambda do
 $0$>
