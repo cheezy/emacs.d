@@ -1,0 +1,6 @@
+#name : lambda do ... end
+#group : control
+# --
+lambda do
+$0$>
+end
