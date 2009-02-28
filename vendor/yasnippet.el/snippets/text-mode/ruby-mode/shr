@@ -1,5 +1,4 @@
 #name: should_receive
 #group : rspec
 # --
-${1:mock}.should_receive(:${2:message})$3
-$0
+${1:mock}.should_receive(:${2:message})$0
