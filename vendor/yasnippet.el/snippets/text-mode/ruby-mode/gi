@@ -1,0 +1,5 @@
+#name : Given ... do end
+#group : cucumber
+# --
+Given /^${1:condition}$/ do$0
+end

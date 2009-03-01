@@ -1,0 +1,5 @@
+#name : When ... do end
+#group : cucumber
+# --
+When /^${1:condition}$/ do$0
+end
