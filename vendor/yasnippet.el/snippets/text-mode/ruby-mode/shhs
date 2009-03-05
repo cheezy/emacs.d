@@ -1,0 +1,5 @@
+#name: should have_selector
+#group : rspec
+# --
+${1:target}.should have_selector($2) do $0
+end$>
