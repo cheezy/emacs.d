@@ -1,3 +1,3 @@
 #name : <%= link_to "...", :controller => "..." %>
 # --
-<%= link_to "${1:title}", :controller => "${2:items}" %>%0
+<%= link_to "${1:title}", :controller => "${2:items}" %>$0

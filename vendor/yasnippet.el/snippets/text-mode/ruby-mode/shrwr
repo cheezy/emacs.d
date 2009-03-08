@@ -1,0 +1,4 @@
+#name: should_receive ... with ... and_return
+#group : rspec
+# --
+${1:mock}.should_receive(:${2:message}).with($3).and_return($4)$0

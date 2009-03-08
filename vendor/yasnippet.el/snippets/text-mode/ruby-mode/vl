@@ -1,0 +1,4 @@
+#name : validates_length_of ...
+#group : rails validation
+# --
+validates_length_of :${1:attribute}, :${2:qualifier} => $0$>
