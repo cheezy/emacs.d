@@ -47,6 +47,12 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+(require 'rinari)
+(define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
+(define-key rinari-minor-mode-map [(control meta shift left)] 'rinari-find-controller)
+(define-key rinari-minor-mode-map [(control meta shift left)] 'rinari-find-model)
+(define-key rinari-minor-mode-map [(control meta shift right)] 'rinari-find-view)
+
 
 (require 'textile-mode)
 (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
