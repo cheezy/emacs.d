@@ -1,0 +1,4 @@
+#name: should redirect_to
+#group : rspec
+# --
+${1:response}.should redirect_to(:controller => "${2:controller}", :action => "${3:action}")$0
