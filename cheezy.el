@@ -49,7 +49,7 @@
 
 (require 'rinari)
 (define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
-(define-key rinari-minor-mode-map [(control meta shift left)] 'rinari-find-controller)
+(define-key rinari-minor-mode-map [(control meta shift up)] 'rinari-find-controller)
 (define-key rinari-minor-mode-map [(control meta shift left)] 'rinari-find-model)
 (define-key rinari-minor-mode-map [(control meta shift right)] 'rinari-find-view)
 
