@@ -42,6 +42,10 @@
 
 ;; Major Modes
 
+;; Cucumber
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
+(autoload 'feature-mode "cucumber-mode" "major mode for editing plaint ext stories" t)
+(add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
 
 ;; Javascript
 (autoload 'js2-mode "js2" nil t)
