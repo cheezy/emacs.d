@@ -1,0 +1,3 @@
+#name: Then some expected outcome
+# --
+Then ${1:some expected outcome}$0
