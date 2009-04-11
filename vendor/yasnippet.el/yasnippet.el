@@ -123,7 +123,7 @@ doesn't call `after-change-major-mode-hook' need to be hooked explicitly.")
 (mapc '(lambda (x)
          (add-to-list 'yas/extra-mode-hooks
                       x))
-      '(ruby-mode-hook actionscript-mode-hook ox-mode-hook python-mode-hook))
+      '(ruby-mode-hook actionscript-mode-hook ox-mode-hook python-mode-hook groovy-mode-hook))
 
 (defvar yas/after-exit-snippet-hook
   '()
