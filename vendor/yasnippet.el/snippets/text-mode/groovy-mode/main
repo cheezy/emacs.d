@@ -1,0 +1,6 @@
+#name: static main
+#group : Declarations.Methods
+# --
+static main(args) {
+$0$>
+}

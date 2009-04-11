@@ -1,0 +1,8 @@
+#name: switch ... case
+#group : Flow
+# --
+switch(${1:value}) {
+case ${2:CASE}:$>
+$2$>
+break$0$>
+}

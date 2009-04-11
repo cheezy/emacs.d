@@ -1,0 +1,6 @@
+#name: shouldFail
+#group : Declarations.Testing.Assertions
+# --
+shouldFail(${1:Exception}) {
+$0$>
+}

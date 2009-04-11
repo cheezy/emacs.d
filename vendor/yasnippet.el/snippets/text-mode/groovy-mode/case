@@ -1,0 +1,6 @@
+#name: case ... break
+#group : Flow
+# --
+case ${1:CASE_NAME}:
+$2$>
+break$0

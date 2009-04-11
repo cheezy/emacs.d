@@ -1,0 +1,4 @@
+#name: assertNotNull
+#group : Declarations.Testing.Assertions
+# --
+assertNotNull("${1:message}", ${2:instance})$0

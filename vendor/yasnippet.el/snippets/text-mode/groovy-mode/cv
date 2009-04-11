@@ -1,0 +1,6 @@
+#name: closure variable
+#group : Declarations.Variables
+# --
+def ${1:closureName} \ { ${2:args} ->
+$0
+}

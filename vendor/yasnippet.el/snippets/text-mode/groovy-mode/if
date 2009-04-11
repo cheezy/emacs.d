@@ -1,0 +1,6 @@
+#name: if
+#group : Flow
+# --
+if (${1:condition}) {
+$0$>
+}

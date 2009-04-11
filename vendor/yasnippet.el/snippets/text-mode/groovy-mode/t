@@ -1,0 +1,6 @@
+#name: test
+#group : Declarations.Testing
+# --
+void test$1() {
+$0$>
+}

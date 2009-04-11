@@ -1,0 +1,8 @@
+#name: try ... catch
+#group : Flow
+# --
+try {
+$3$>
+} catch (${1:Exception} e) {
+$2$>
+}

@@ -1,0 +1,6 @@
+#name: private method
+#group : Declarations.Methods
+# --
+private ${1:void} ${2:methodName}(${3:args}) {
+$0$>
+}

@@ -1,0 +1,6 @@
+#name: final method
+#group : Declarations.Methods
+# --
+final ${1:void} ${2:methodName}(${3:args}) {
+$0$>
+}
