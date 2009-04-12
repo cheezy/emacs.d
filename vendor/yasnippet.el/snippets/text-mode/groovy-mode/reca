@@ -1,0 +1,4 @@
+#name: redirect(controller:..., action:...)
+#group : Grails.Controllers
+# --
+redirect(controller:"${1:c}" action:"${2:a}")$0
