@@ -140,6 +140,12 @@
                (setq path "~/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin")
                (setenv "PATH" path))
              (local-set-key "\C-u" 'eshell-kill-input)))
+
+(defun eshell/clear ()
+  "Command to clear the eshell buffer."
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)))
                
 
 ;; theme-start
