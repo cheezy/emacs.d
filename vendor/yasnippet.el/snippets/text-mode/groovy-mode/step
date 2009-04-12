@@ -1,0 +1,6 @@
+#name: step(to,amount)  { ... }
+#group : Iteration.Numbers
+# --
+step(${1:to}, ${2:amount}) { ${3:i} ->
+$0$>
+}

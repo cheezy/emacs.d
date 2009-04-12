@@ -1,0 +1,6 @@
+#name: downto()  { ... }
+#group : Iteration.Numbers
+# --
+downto(${1:0}) { ${2:i} ->
+$0$>
+}

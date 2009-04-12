@@ -1,0 +1,6 @@
+#name: each { ... }
+#group : Iteration.Collections
+# --
+each { ${1:obj} ->
+$0$>
+}

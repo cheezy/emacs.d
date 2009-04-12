@@ -1,0 +1,6 @@
+#name: while(...)
+#group : Iteration
+# --
+while(${1:condition}) {
+$0$>
+}

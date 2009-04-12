@@ -1,0 +1,6 @@
+#name: eachMatch(regex) { ... }
+#group : Iteration.Strings
+# --
+eachMatch(/${1:regex}/) { ${2:match} ->
+$0$>
+}

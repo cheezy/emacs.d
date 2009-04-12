@@ -1,0 +1,6 @@
+#name: upto()  { ... }
+#group : Iteration.Numbers
+# --
+upto(${1:0}) { ${2:i} ->
+$0$>
+}

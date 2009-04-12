@@ -1,0 +1,6 @@
+#name: for (... in ...)
+#group : Iteration
+# --
+for(${1:element} in ${2:collection}) {
+$0$>
+}

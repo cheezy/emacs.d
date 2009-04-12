@@ -1,0 +1,6 @@
+#name: any { ... }
+#group : Iteration.Collections
+# --
+any { ${1:obj} ->
+$0$>
+}

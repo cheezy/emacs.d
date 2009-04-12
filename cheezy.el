@@ -25,6 +25,11 @@
 (defvar backup-dir (concat "/tmp/emacs-backups/" (user-login-name) "/"))
 (setq backup-directory-alist (list (cons "." backup-dir)))
 
+;; Groovy
+(autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
+(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+
 ;; Snippets
 (add-to-list 'load-path "~/.emacs.d/vendor/yasnippet.el")
 (require 'yasnippet)
@@ -46,11 +51,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
 (autoload 'feature-mode "cucumber-mode" "major mode for editing plaint ext stories" t)
 (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
-
-;; Groovy
-(autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
-(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
-(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
 ;; Javascript
 (autoload 'js2-mode "js2" nil t)

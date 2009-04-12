@@ -1,0 +1,6 @@
+#name: grep(filter) { ... }
+#group : Iteration.Strings
+# --
+grep(${1:filter}) { ${2:obj} ->
+$0$>
+}
