@@ -1,0 +1,6 @@
+#name : each do { ... }
+#group : collections
+# --
+each do |${1:var}|
+$0$>
+end

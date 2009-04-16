@@ -141,7 +141,7 @@
                (setenv "PATH" path))
              (local-set-key "\C-u" 'eshell-kill-input)))
 
-(defun eshell/clear ()
+(defun eshell/cl ()
   "Command to clear the eshell buffer."
   (interactive)
   (let ((inhibit-read-only t))
