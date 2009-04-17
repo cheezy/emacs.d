@@ -6,11 +6,11 @@
   '(progn
 
      ;; Cosmetics
-     (font-lock-add-keywords
-      'js2-mode `(("\\(function *\\)("
-                   (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                             "ƒ")
-                             nil)))))
+     ;; (font-lock-add-keywords
+     ;;  'js2-mode `(("\\(function *\\)("
+     ;;               (0 (progn (compose-region (match-beginning 1) (match-end 1)
+     ;;                                         "ƒ")
+     ;;                         nil)))))
 
      (font-lock-add-keywords
       'js2-mode
@@ -20,7 +20,7 @@
      (defun js-lambda () (interactive) (insert "function () {\n}")
        (backward-char 5))
 
-     (add-hook 'js2-mode-hook 'coding-hook)
+     (add-hook 'js2-mode-hook 'run-coding-hook)
 
      (define-key js2-mode-map (kbd "C-c l") 'js-lambda)
      (define-key js2-mode-map "\C-\M-h" 'backward-kill-word)
@@ -31,7 +31,7 @@
                                             (back-to-indentation)))
 
      (setq js2-bounce-indent-flag nil
-           js2-indent-on-enter-key t)
+           js2-indent-on-enter-key nil)
 
      (defun js-continued-var-decl-list-p ()
        "Return non-nil if point is inside a continued variable declaration list."
