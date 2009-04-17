@@ -15,21 +15,30 @@
    (string-match "[0-9.]+" groovy-mode-revision)
    (substring groovy-mode-revision (match-beginning 0) (match-end 0))))
 
+(defconst groovy-block-beg-keywords
+  '("class" "module" "def" "if" "case" "while" "for")
+  "Keywords at the beginning of blocks.")
+
 (defconst groovy-block-beg-re
-  "todo ignore for now as it performs strangely... (jez 23-nov-2004)"
-  )
+  (regexp-opt groovy-block-beg-keywords)
+  "Regexp to match the beginning of blocks.")
 
 (defconst groovy-non-block-do-re
-  "\\(while\\|for\\)\\>"
-  )
+  (concat (regexp-opt '("while" "for") t) "\\>")
+  "Regexp to match keywords that nest without blocks.")
 
 (defconst groovy-indent-beg-re
-  "\\(\\s *\\(class\\|module\\|def\\)\\)\\|if\\|case\\|while\\|for"
-    )
+  (concat "\\(\\s *" (regexp-opt '("class" "module" "def") t) "\\)\\|"
+          (regexp-opt '("if" "case" "while" "for")))
+  "Regexp to match where the indentation gets deeper.")
+
+(defconst groovy-modifier-beg-keywords
+  '("if" "while")
+  "Modifiers that are the same as the beginning of blocks.")
 
 (defconst groovy-modifier-beg-re
-  "if\\|while"
-  )
+  (regexp-opt groovy-modifier-beg-keywords)
+  "Regexp to match modifiers same as the beginning of blocks.")
 
 (defconst groovy-here-doc-beg-re
   "<<\\(-\\)?\\(\\([a-zA-Z0-9_]+\\)\\|[\"]\\([^\"]+\\)[\"]\\|[']\\([^']+\\)[']\\)")
