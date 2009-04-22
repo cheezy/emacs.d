@@ -66,20 +66,6 @@
 (require 'textile-mode)
 (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
 
-(autoload 'markdown-mode "markdown-mode.el"
-  "Major mode for editing Markdown files" t)
-
-(require 'haml-mode)
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
-(define-key haml-mode-map [(control meta down)] 'haml-forward-sexp)
-(define-key haml-mode-map [(control meta up)] 'haml-backward-sexp)
-(define-key haml-mode-map [(control meta left)] 'haml-up-list)
-(define-key haml-mode-map [(control meta right)] 'haml-down-list)
-
-
-(require 'sass-mode)
-(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
-
 (add-to-list 'auto-mode-alist '("\\.sake\\'" .ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rjs\\'" .ruby-mode))
 

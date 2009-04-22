@@ -1,5 +1,5 @@
 #name : <% form_tag(:action => "...") do %> ... <% end %>
 # --
-<% form_tag(:action => "${1:update}" do %>
+<% form_tag(:action => "${1:update}") do %>
 $0$>
 <% end %>
