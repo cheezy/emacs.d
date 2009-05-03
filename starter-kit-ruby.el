@@ -4,9 +4,7 @@
 
 (eval-after-load 'ruby-mode
   '(progn
-     ;; work around possible elpa bug
-     (ignore-errors (require 'ruby-compilation))
-     (setq ruby-use-encoding-map nil)
+     (require 'ruby-compilation)
      (add-hook 'ruby-mode-hook 'inf-ruby-keys)
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
      (define-key ruby-mode-map (kbd "C-M-h") 'backward-kill-word)
@@ -14,10 +12,9 @@
 
 (global-set-key (kbd "C-h r") 'ri)
 
-;; Rake files are ruby, too, as are gemspecs.
+;; Rake files are ruby, too.
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 
 ;; We never want to edit Rubinius bytecode
 (add-to-list 'completion-ignored-extensions ".rbc")
@@ -52,8 +49,7 @@ exec-to-string command, but it works and seems fast"
              (delete-region (point-min) (point-max))))))
      (ad-activate 'ruby-do-run-w/compilation)))
 
-(add-hook 'ruby-mode-hook 'run-coding-hook)
-(add-hook 'ruby-mode-hook 'idle-highlight)
+(add-hook 'ruby-mode-hook 'coding-hook)
 
 ;;; Flymake
 
@@ -85,11 +81,6 @@ exec-to-string command, but it works and seems fast"
                    (local-set-key (kbd "C-c d")
                                   'flymake-display-err-menu-for-current-line)
                    (flymake-mode t))))))
-
-;; Rinari (Minor Mode for Ruby On Rails)
-(setq rinari-major-modes
-      (list 'mumamo-after-change-major-mode-hook 'dired-mode-hook 'ruby-mode-hook
-	    'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook))
 
 ;; TODO: set up ri
 ;; TODO: electric

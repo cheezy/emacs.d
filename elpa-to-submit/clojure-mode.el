@@ -1,54 +1,12 @@
-;;; clojure-mode.el --- Major mode for Clojure code
+;;; clojure-mode.el -- Major mode for Clojure code
 
-;; Copyright (C) 2007, 2008, 2009 Jeffrey Chu and Lennart Staflin
+;; Copyright (C) 2008 Jeffrey Chu
 ;;
-;; Authors: Jeffrey Chu <jochu0@gmail.com>
-;;          Lennart Staflin <lenst@lysator.liu.se>
-;; URL: http://www.emacswiki.org/cgi-bin/wiki/ClojureMode
-;; Version: 1.0
-;; Keywords: languages, lisp
-
-;; This file is not part of GNU Emacs.
-
-;;; Commentary:
-
-;; Provides font-lock, indentation, and functions for communication
-;; with subprocesses for Clojure. (http://clojure.org)
-
-;;; Installation:
-
-;; (0) Add this file to your load-path, usually the ~/.emacs.d directory.
-;; (1) Either:
-;;     Add these lines to your .emacs:
-;;       (autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
-;;       (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
-;;     Or generate autoloads with the `update-directory-autoloads' function.
-
-;; Paredit users:
-
-;; Download paredit v21 or greater
-;;    http://mumble.net/~campbell/emacs/paredit.el
-
-;; Use paredit as you normally would with any other mode; for instance:
+;; Author: Jeffrey Chu <jochu0@gmail.com>
+;; 
+;;   Originally by: Lennart Staflin <lenst@lysator.liu.se>
+;;                  Copyright (C) 2007, 2008 Lennart Staflin
 ;;
-;;   ;; require or autoload paredit-mode
-;;   (defun lisp-enable-paredit-hook () (paredit-mode 1))
-;;   (add-hook 'clojure-mode-hook 'lisp-enable-paredit-hook)
-
-;; The clojure-install function can check out and configure all the
-;; dependencies get going with Clojure, including SLIME integration.
-;; To use this function, you may have to manually load clojure-mode.el
-;; Using M-x load-file or M-x eval-buffer
-
-;;; Todo:
-
-;; * installer doesn't work when git port is blocked
-;; * updater/installer should know "last know good" shals?
-;; * hashbang is also a valid comment character
-;; * do the inferior-lisp functions work without SLIME? needs documentation
-
-;;; License:
-
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License
 ;; as published by the Free Software Foundation; either version 3
@@ -63,8 +21,6 @@
 ;; along with GNU Emacs; see the file COPYING.  If not, write to the
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
-
-;;; Code:
 
 (require 'cl)
 
@@ -87,7 +43,7 @@ restart (ie. M-x clojure-mode) of existing clojure mode buffers."
   :type 'boolean
   :group 'clojure-mode)
 
-(defcustom clojure-mode-load-command  "(clojure.core/load-file \"%s\")\n"
+(defcustom clojure-mode-load-command  "(clojure/load-file \"%s\")\n"
   "*Format-string for building a Clojure expression to load a file.
 This format string should use `%s' to substitute a file name
 and should result in a Clojure expression that will command the inferior Clojure
@@ -106,12 +62,6 @@ indentation."
   :type 'integer
   :group 'clojure-mode)
 
-(defcustom clojure-src-root (expand-file-name "~/src")
-  "Directory that contains checkouts for clojure, clojure-contrib,
-slime, and swank-clojure. This value is used by `clojure-install'
-and `clojure-slime-config'."
-  :type 'string
-  :group 'clojure-mode)
 
 (defvar clojure-mode-map
   (let ((map (make-sparse-keymap)))
@@ -156,9 +106,6 @@ All commands in `lisp-mode-shared-map' are inherited by this map.")
 This holds a cons cell of the form `(DIRECTORY . FILE)'
 describing the last `clojure-load-file' or `clojure-compile-file' command.")
 
-(defvar clojure-def-regexp "^\\s *\\((def\\S *\\s +\\(\\S +\\)\\)"
-  "A regular expression to match any top-level definitions.")
-
 ;;;###autoload
 (defun clojure-mode ()
   "Major mode for editing Clojure code - similar to Lisp mode..
@@ -185,12 +132,6 @@ if that value is non-nil."
        'clojure-indent-function)
   (set (make-local-variable 'font-lock-multiline) t)
 
-  (setq lisp-imenu-generic-expression
-        `((nil ,clojure-def-regexp 2)))
-  (setq imenu-create-index-function
-        (lambda ()
-          (imenu--generic-function lisp-imenu-generic-expression)))
-
   (if (and (not (boundp 'font-lock-extend-region-functions))
            (or clojure-mode-font-lock-multiline-def
                clojure-mode-font-lock-comment-sexp))
@@ -213,12 +154,7 @@ if that value is non-nil."
 	  (font-lock-mark-block-function . mark-defun)
 	  (font-lock-syntactic-face-function . lisp-font-lock-syntactic-face-function)))
   
-  (run-mode-hooks 'clojure-mode-hook)
-  
-  ;; Enable curly braces when paredit is enabled in clojure-mode-hook
-  (when (and (featurep 'paredit) paredit-mode (>= paredit-version 21))
-;;    (define-key clojure-mode-map "{" 'paredit-open-curly)
-;;    (define-key clojure-mode-map "}" 'paredit-close-curly)))
+  (run-mode-hooks 'clojure-mode-hook))
 
 (defun clojure-font-lock-def-at-point (point)
   "Find the position range between the top-most def* and the
@@ -302,7 +238,7 @@ elements of a def* forms."
     `( ;; Definitions.
       (,(concat "(\\(?:clojure/\\)?\\(def"
 		;; Function declarations.
-		"\\(n-?\\|multi\\|macro\\|method\\|test\\|"
+		"\\(n-?\\|multi\\|macro\\|method\\|"
 		;; Variable declarations.
                 "struct\\|once\\|"
 		"\\)\\)\\>"
@@ -318,44 +254,16 @@ elements of a def* forms."
       (,(concat
          "(\\(?:clojure/\\)?" 
          (regexp-opt
-          '("let" "do"
-            "cond" "condp"
-            "for" "loop" "recur"
-            "when" "when-not" "when-let" "when-first"
-            "if" "if-let" "if-not"
-            "." ".." "->" "doto"
-            "and" "or"
-            "dosync" "doseq" "dotimes" "dorun" "doall"
-            "load" "import" "unimport" "ns" "in-ns" "refer"
-            "try" "catch" "finally" "throw"
-            "with-open" "with-local-vars" "binding" 
+          '("cond" "for" "loop" "let" "recur" "do" "binding" "with-meta"
+            "when" "when-not" "when-let" "when-first" "if" "if-let"
+            "delay" "lazy-cons" "." ".." "->" "and" "or" "locking"
+            "dosync" "load"
+            "sync" "doseq" "dotimes" "import" "unimport" "ns" "in-ns" "refer"
+            "implement" "proxy" "time" "try" "catch" "finally" "throw"
+            "doto" "with-open" "with-local-vars" "struct-map"
             "gen-class" "gen-and-load-class" "gen-and-save-class") t)
          "\\>")
         .  1)
-      ;; Built-ins
-      (,(concat
-         "(\\(?:clojure/\\)?" 
-         (regexp-opt
-          '(
-            "implement" "proxy" "lazy-cons" "with-meta"
-            "struct" "struct-map" "delay" "locking" "sync" "time" "apply"
-            "remove" "merge" "interleave" "interpose" "distinct" "for"
-            "cons" "concat" "lazy-cat" "cycle" "rest" "frest" "drop" "drop-while"
-            "nthrest" "take" "take-while" "take-nth" "butlast" "drop-last"
-            "reverse" "sort" "sort-by" "split-at" "partition" "split-with"
-            "first" "ffirst" "rfirst" "when-first" "zipmap" "into" "set" "vec" "into-array"
-            "to-array-2d" "not-empty" "seq?" "not-every?" "every?" "not-any?" "empty?"
-            "map" "mapcat" "vector?" "list?" "hash-map" "reduce" "filter"
-            "vals" "keys" "rseq" "subseq" "rsubseq" "count"
-            "fnseq" "lazy-cons" "repeatedly" "iterate"
-            "repeat" "replicate" "range"
-            "line-seq" "resultset-seq" "re-seq" "re-find" "tree-seq" "file-seq" "xml-seq"
-            "iterator-seq" "enumeration-seq"
-            "symbol?" "string?" "vector" "conj" "str"
-            "pos?" "neg?" "zero?" "nil?" "inc" "format"
-            "alter" "commute" "ref-set" "floor" "assoc" "send" "send-off" ) t)
-         "\\>")
-       1 font-lock-builtin-face)
       ;; (fn name? args ...)
       (,(concat "(\\(?:clojure/\\)?\\(fn\\)[ \t]+"
                 ;; Possibly type
@@ -368,7 +276,7 @@ elements of a def* forms."
       ("\\<:\\sw+\\>" 0 font-lock-builtin-face)
       ;; Meta type annotation #^Type
       ("#^\\sw+" 0 font-lock-type-face)
-      ("\\<io\\!\\>" 0 font-lock-warning-face)))
+      ))
   "Default expressions to highlight in Clojure mode.")
 
 
@@ -562,97 +470,18 @@ check for contextual indenting."
   (with-open 1)
   (with-precision 1))
 
-;;; SLIME integration
+;; macro indent (auto generated)
 
-;;;###autoload
-(defun clojure-slime-config ()
-  "Load Clojure SLIME support out of the `clojure-src-root' directory.
-
-Since there's no single conventional place to keep Clojure, this
-is bundled up as a function so that you can call it after you've set
-`clojure-src-root' in your personal config."
-
-  (add-to-list 'load-path (concat clojure-src-root "/slime"))
-  (add-to-list 'load-path (concat clojure-src-root "/slime/contrib"))
-  (add-to-list 'load-path (concat clojure-src-root "/swank-clojure"))
-
-  (require 'slime-autoloads)
-  (require 'swank-clojure-autoload)
-
-  (slime-setup '(slime-fancy))
-
-  (setq swank-clojure-jar-path (concat clojure-src-root "/clojure/clojure.jar")
-        swank-clojure-extra-classpaths
-        (list (concat clojure-src-root "/clojure-contrib/src/"))))
-
-;;;###autoload
-(defun clojure-install (src-root)
-  "Perform the initial Clojure install along with Emacs support libs.
-
-This requires git, a JVM, ant, and an active Internet connection."
-  (interactive (list
-                (read-string (concat "Install Clojure in (default: "
-                                     clojure-src-root "): ")
-                             nil nil clojure-src-root)))
-
-  (make-directory src-root t)
-
-  (if (file-exists-p (concat src-root "/clojure"))
-      (error "Clojure is already installed at %s/clojure" src-root))
-
-  (message "Checking out source... this will take a while...")
-  (dolist (cmd '("git clone git://github.com/kevinoneill/clojure.git"
-                 "git clone git://github.com/kevinoneill/clojure-contrib.git"
-                 "git clone git://github.com/jochu/swank-clojure.git"
-                 "git clone --depth 2 git://github.com/nablaone/slime.git"))
-    (unless (= 0 (shell-command (format "cd %s; %s" src-root cmd)))
-      (error "Clojure installation step failed: %s" cmd)))
-
-  (message "Compiling...")
-  (unless (= 0 (shell-command (format "cd %s/clojure; ant" src-root)))
-    (error "Couldn't compile Clojure."))
-
-  (with-output-to-temp-buffer "clojure-install-note"
-    (princ
-     (if (equal src-root clojure-src-root)
-         "Add a call to \"\(eval-after-load 'clojure-mode '\(clojure-slime-config\)\)\"
-to your .emacs so you can use SLIME in future sessions."
-       (setq clojure-src-root src-root)
-       (format "You've installed clojure in a non-default location. If you want
-to use this installation in the future, you will need to add the following
-lines to your personal Emacs config somewhere:
-
-\(setq clojure-src-root \"%s\"\)
-\(eval-after-load 'clojure-mode '\(clojure-slime-config\)\)" src-root)))
-    (princ "\n\n Press M-x slime to launch Clojure."))
-
-  (clojure-slime-config))
-
-(defun clojure-update ()
-  "Update clojure-related repositories and recompile clojure.
-
-Works with clojure etc. installed via `clojure-install'. Code
-should be checked out in the `clojure-src-root' directory."
-  (interactive)
-
-  (message "Updating...")
-  (dolist (repo '("clojure" "clojure-contrib" "swank-clojure" "slime"))
-    (unless (= 0 (shell-command (format "cd %s/%s; git pull origin master" clojure-src-root repo)))
-      (error "Clojure update failed: %s" repo)))
-
-  (message "Compiling...")
-  (save-window-excursion
-    (unless (= 0 (shell-command (format "cd %s/clojure; ant" clojure-src-root)))
-      (error "Couldn't compile Clojure.")))
-  (message "Finished updating Clojure."))
-
-;;(defun clojure-enable-slime-on-existing-buffers()
-;;  (interactive)
-;;  (add-hook 'clojure-mode-hook 'swank-clojure-slime-mode-hook)
-;;  (dolist (buffer (buffer-list))
-;;    (with-current-buffer buffer
-;;      (if (equal major-mode 'clojure-mode)
-;;          (swank-clojure-slime-mode-hook)))))
+;; Things that just aren't right (manually removed)
+; (put '-> 'clojure-indent-function 2)
+; (put '.. 'clojure-indent-function 2)
+; (put 'and 'clojure-indent-function 1)
+; (put 'defmethod 'clojure-indent-function 2)
+; (put 'defn- 'clojure-indent-function 1)
+; (put 'memfn 'clojure-indent-function 1)
+; (put 'or 'clojure-indent-function 1)
+; (put 'lazy-cat 'clojure-indent-function 1)
+; (put 'lazy-cons 'clojure-indent-function 1)
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))

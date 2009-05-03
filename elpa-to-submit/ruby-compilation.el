@@ -49,9 +49,7 @@
 ;;; Code:
 
 (require 'ansi-color)
-(require 'pcmpl-rake)
 (require 'compile)
-(require 'inf-ruby)
 (require 'which-func)
 
 (defvar ruby-compilation-error-regexp
@@ -69,34 +67,35 @@
 (defvar ruby-compilation-test-name-flag "-n"
   "What flag to use to specify that you want to run a single test.")
 
-(defvar ruby-compilation-clear-between t
-  "Whether to clear the compilation output between runs.")
-
 (defun ruby-compilation-run (cmd)
   "Run a ruby process dumping output to a ruby compilation buffer."
   (interactive "FRuby Comand: ")
   (let ((name (file-name-nondirectory (car (split-string cmd))))
 	(cmdlist (cons ruby-compilation-executable
-                       (split-string (expand-file-name cmd)))))
+                       ;; What on earth is ruby-args-to-list?
+                       (ruby-args-to-list (expand-file-name cmd)))))
     (pop-to-buffer (ruby-compilation-do name cmdlist))))
 
+;;;###autoload
 (defun ruby-compilation-rake (&optional edit task)
   "Run a rake process dumping output to a ruby compilation buffer."
   (interactive "P")
   (let* ((task (or task (if (stringp edit) edit)
-		   (completing-read "Rake: " (pcmpl-rake-tasks))))
+		   (completing-read "Rake: " (ruby-compilation-rake-tasks))))
 	 (rake-args (if (and edit (not (stringp edit)))
 			(read-from-minibuffer "Edit Rake Command: " (concat task " "))
 		      task)))
     (pop-to-buffer (ruby-compilation-do
 		    "rake" (cons "rake"
-				 (split-string rake-args))))))
+				 (ruby-args-to-list rake-args))))))
 
+;;;###autoload
 (defun ruby-compilation-this-buffer ()
   "Run the current buffer through Ruby compilation."
   (interactive)
   (ruby-compilation-run (buffer-file-name)))
 
+;;;###autoload
 (defun ruby-compilation-this-test ()
   "Run the test at point through Ruby compilation."
   (interactive)
@@ -187,9 +186,7 @@ compilation buffer."
   for navigating ruby compilation buffers."
   nil
   " ruby:comp"
-  ruby-compilation-minor-mode-map
-  (when ruby-compilation-clear-between
-    (delete-region (point-min) (point-max))))
+  ruby-compilation-minor-mode-map)
 
 ;; So we can invoke it easily.
 (eval-after-load 'ruby-mode
@@ -201,6 +198,19 @@ compilation buffer."
 (dolist (executable (list "jruby" "rbx" "ruby1.9" "ruby1.8" "ruby"))
   (add-to-list 'safe-local-variable-values
                (cons 'ruby-compilation-executable executable)))
-   
+
+(defun ruby-compilation-rake-tasks ()
+   "Return a list of all the rake tasks defined in the current
+projects.  I know this is a hack to put all the logic in the
+exec-to-string command, but it works and seems fast"
+   (delq nil (mapcar '(lambda(line)
+			(if (string-match "rake \\([^ ]+\\)" line) (match-string 1 line)))
+		     (split-string (shell-command-to-string "rake -T") "[\n]"))))
+
+;;;###autoload
+(defun pcomplete/rake ()
+  "Completion rules for the `ssh' command."
+  (pcomplete-here (pcmpl-rake-tasks)))
+
 (provide 'ruby-compilation)
 ;;; ruby-compilation.el ends here

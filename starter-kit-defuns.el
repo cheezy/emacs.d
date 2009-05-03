@@ -21,8 +21,7 @@
 ;; Buffer-related
 
 (defun ido-imenu ()
-  "Update the imenu index and then use ido to select a symbol to navigate to.
-Symbols matching the text at point are put first in the completion list."
+  "Update the imenu index and then use ido to select a symbol to navigate to."
   (interactive)
   (imenu--make-index-alist)
   (let ((name-and-pos '())
@@ -47,45 +46,22 @@ Symbols matching the text at point are put first in the completion list."
                                (add-to-list 'symbol-names name)
                                (add-to-list 'name-and-pos (cons name position))))))))
       (addsymbols imenu--index-alist))
-    ;; If there are matching symbols at point, put them at the beginning of `symbol-names'.
-    (let ((symbol-at-point (thing-at-point 'symbol)))
-      (when symbol-at-point
-        (let* ((regexp (concat (regexp-quote symbol-at-point) "$"))
-               (matching-symbols (delq nil (mapcar (lambda (symbol)
-                                                     (if (string-match regexp symbol) symbol))
-                                                   symbol-names))))
-          (when matching-symbols
-            (sort matching-symbols (lambda (a b) (> (length a) (length b))))
-            (mapc (lambda (symbol) (setq symbol-names (cons symbol (delete symbol symbol-names))))
-                  matching-symbols)))))
     (let* ((selected-symbol (ido-completing-read "Symbol? " symbol-names))
            (position (cdr (assoc selected-symbol name-and-pos))))
       (goto-char position))))
 
-;;; These belong in coding-hook:
-
-(defun local-column-number-mode ()
-  (make-local-variable 'column-number-mode)
-  (column-number-mode t))
-
-(defun local-comment-auto-fill ()
-  (set (make-local-variable 'comment-auto-fill-only-comments) t)
-  (auto-fill-mode t))
-
-(defun turn-on-hl-line-mode ()
-  (if window-system (hl-line-mode t)))
-
-(defun turn-on-save-place-mode ()
-  (setq save-place t))
-
-(add-hook 'coding-hook 'local-column-number-mode)
-(add-hook 'coding-hook 'local-comment-auto-fill)
-(add-hook 'coding-hook 'turn-on-hl-line-mode)
-(add-hook 'coding-hook 'pretty-lambdas)
-  
-(defun run-coding-hook ()
+(defun coding-hook ()
   "Enable things that are convenient across all coding buffers."
-  (run-hooks 'coding-hook))
+  (set (make-local-variable 'comment-auto-fill-only-comments) t)
+  (make-local-variable 'column-number-mode)
+  (column-number-mode t)
+  (setq save-place t)
+  (auto-fill-mode) ;; in comments only
+  (if window-system (hl-line-mode t))
+  (pretty-lambdas)
+  ;; TODO: this breaks in js2-mode!
+  ;;(if (functionp 'idle-highlight) (idle-highlight))
+  )
 
 (defun untabify-buffer ()
   (interactive)
@@ -176,20 +152,10 @@ Symbols matching the text at point are put first in the completion list."
         (switch-to-buffer buffer)
       (funcall function))))
 
-(defun insert-date ()
-  "Insert a time-stamp according to locale's date and time format."
-  (interactive)
-  (insert (format-time-string "%c" (current-time))))
-
 (defun pairing-bot ()
   "If you can't pair program with a human, use this instead."
   (interactive)
   (message (if (y-or-n-p "Do you have a test for that? ") "Good." "Bad!")))
-
-;; A monkeypatch to cause annotate to ignore whitespace
-(defun vc-git-annotate-command (file buf &optional rev)
-  (let ((name (file-relative-name file)))
-    (vc-git-command buf 0 name "blame" "-w" rev)))
 
 (provide 'starter-kit-defuns)
 ;;; starter-kit-defuns.el ends here

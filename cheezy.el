@@ -31,10 +31,10 @@
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
 ;; Snippets
-(add-to-list 'load-path "~/.emacs.d/vendor/yasnippet.el")
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet.el"))
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/vendor/yasnippet.el/snippets")
+(yas/load-directory (concat dotfiles-dir "/vendor/yasnippet.el/snippets"))
 
 ;; Commands
 (require 'unbound)
@@ -56,6 +56,8 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/jump.el"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
 (require 'rinari)
 (define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
 (define-key rinari-minor-mode-map [(control meta shift up)] 'rinari-find-controller)
@@ -111,11 +113,10 @@
 (global-set-key [(meta shift down)] 'ido-find-file)
 (global-set-key [(meta shift left)] 'magit-status)
 
-(global-set-key [(control \])] 'indent-rigidly)
-
 (global-set-key [(meta H)] 'delete-other-windows)
 (global-set-key [(meta D)] 'backward-kill-ward)
 (global-set-key [(meta N)] 'cleanup-buffer)
+(global-set-key [(control \])] 'indent-rigidly)
 
 (prefer-coding-system 'utf-8)
 
