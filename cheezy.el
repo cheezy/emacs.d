@@ -56,6 +56,7 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/jump.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
 (require 'rinari)
@@ -68,8 +69,7 @@
 (require 'textile-mode)
 (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
 
-(add-to-list 'auto-mode-alist '("\\.sake\\'" .ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.rjs\\'" .ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.js\.erb\\'" . ruby-mode))
 
 ;; Font
 ;;(set-face-font 'default "-apple-inconsolata-medium-r-normal--20-0-72-72-m-0-iso10646-1")
@@ -114,7 +114,7 @@
 (global-set-key [(meta shift left)] 'magit-status)
 
 (global-set-key [(meta H)] 'delete-other-windows)
-(global-set-key [(meta D)] 'backward-kill-ward)
+(global-set-key [(meta D)] 'backward-kill-word)
 (global-set-key [(meta N)] 'cleanup-buffer)
 (global-set-key [(control \])] 'indent-rigidly)
 
