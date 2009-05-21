@@ -2,5 +2,5 @@
 #group : control structure
 # --
 do |${1:obj}|
-$1.$0$>
-end
+$0$>
+$>end
