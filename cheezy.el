@@ -57,7 +57,6 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/jump.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
 (require 'rinari)
 (define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
