@@ -1,4 +1,5 @@
 
+
 ;; CHEEZY settings
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
@@ -99,6 +100,7 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-c") 'copy-region-as-kill)
+(global-set-key (kbd "M-a") 'mark-whole-buffer)
 
 ;; Keyboard Overrides
 (define-key textile-mode-map (kbd "M-s") 'save-buffer)
