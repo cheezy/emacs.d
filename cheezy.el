@@ -91,6 +91,12 @@
                                          'fullboth)))
 (global-set-key (kbd "M-n") 'toggle-fullscreen)
 
+;; Send the buffer to inf-ruby buffer
+(defun send-buffer-to-ruby()
+  (interactive)
+  (ruby-send-region-and-go (point-min) (point-max)))
+(global-set-key (kbd "M-j") 'send-buffer-to-ruby)
+
 ;; Split Windows
 (global-set-key [f6] 'split-window-horizontally)
 (global-set-key [f7] 'split-window-vertically)
