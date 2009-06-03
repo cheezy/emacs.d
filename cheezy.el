@@ -31,6 +31,25 @@
 (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
+;; Rinari
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
+(require 'rinari)
+(define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
+(define-key rinari-minor-mode-map [(control meta shift up)] 'rinari-find-controller)
+(define-key rinari-minor-mode-map [(control meta shift left)] 'rinari-find-model)
+(define-key rinari-minor-mode-map [(control meta shift right)] 'rinari-find-view)
+
+;; rhtml-mode
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/rhtml"))
+(require 'rhtml-mode)
+(add-hook 'rhtml-mode-hook
+     	  (lambda () (rinari-launch)))
+
+;; Cucumber
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
+(autoload 'feature-mode "cucumber-mode" "major mode for editing plaint ext stories" t)
+(add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
+
 ;; Snippets
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet.el"))
 (require 'yasnippet)
@@ -48,22 +67,9 @@
 
 ;; Major Modes
 
-;; Cucumber
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
-(autoload 'feature-mode "cucumber-mode" "major mode for editing plaint ext stories" t)
-(add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
-
 ;; Javascript
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
-(require 'rinari)
-(define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
-(define-key rinari-minor-mode-map [(control meta shift up)] 'rinari-find-controller)
-(define-key rinari-minor-mode-map [(control meta shift left)] 'rinari-find-model)
-(define-key rinari-minor-mode-map [(control meta shift right)] 'rinari-find-view)
 
 
 (require 'textile-mode)
