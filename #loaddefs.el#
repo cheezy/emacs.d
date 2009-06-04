@@ -1,36 +1,0 @@
-;;; loaddefs.el --- automatically extracted autoloads
-;;
-;;; Code:
-
-
-;;;### (autoloads (color-theme-blackboard) "blackboard" "elpa-to-submit/blackboard.el"
-;;;;;;  (18812 26351))
-;;; Generated autoloads from elpa-to-submit/blackboard.el
-
-(autoload (quote color-theme-blackboard) "blackboard" "\
-Color theme by JD Huntington, based off the TextMate Blackboard theme, created 2008-11-27
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (cheat) "cheat" "elpa-to-submit/cheat.el" (18812
-;;;;;;  26351))
-;;; Generated autoloads from elpa-to-submit/cheat.el
-
-(autoload (quote cheat) "cheat" "\
-Show the specified cheat sheet.
-
-If SILENT is non-nil then do not print any output, but return it
-as a string instead.
-
-\(fn NAME &optional SILENT)" t nil)
-
-;;;***
-
-;; Local Variables:
-;; version-control: never
-;; no-byte-compile: t
-;; no-update-autoloads: t
-;; End:
-;;; loaddefs.el ends here
