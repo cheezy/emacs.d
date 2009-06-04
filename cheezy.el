@@ -375,7 +375,7 @@
      (gui-button-face ((t (:foreground "red" :background "black"))))
      (gui-element ((t (:bold t :background "#ffffff" :foreground "#000000" :weight bold))))
      (header-line ((t (:box (:line-width -1 :style released-button) :background "grey20" :foreground "grey90" :box nil))))
-     (highlight ((t (:background "#3c3c3c"))))
+     (highlight ((t (:background "#3f3f3f"))))
      (highline-face ((t (:background "SeaGreen"))))
      (holiday-face ((t (:background "DimGray"))))
      (info-menu-5 ((t (:underline t))))
@@ -404,7 +404,7 @@
  
      (mouse ((t (:background "Grey"))))
      (paren-blink-off ((t (:foreground "brown"))))
-     (region ((t (:foreground "white" :background "#666666"))))
+     (region ((t  (:background "#333333"))))
      (ruler-mode-column-number-face ((t (:box (:color "grey76" :line-width 1 :style released-button) :background "grey76" :stipple nil :inverse-video nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :family "Inconsolata" :foreground "black"))))
      (ruler-mode-current-column-face ((t (:bold t :box (:color "grey76" :line-width 1 :style released-button) :background "grey76" :stipple nil :inverse-video nil :strike-through nil :overline nil :underline nil :slant normal :width normal :family "Inconsolata" :foreground "yellow" :weight bold))))
      (ruler-mode-default-face ((t (:family "Inconsolata" :width normal :weight normal :slant normal :underline nil :overline nil :strike-through nil :inverse-video nil :stipple nil :background "grey76" :foreground "grey64" :box (:color "grey76" :line-width 1 :style released-button)))))
