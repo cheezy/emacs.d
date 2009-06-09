@@ -1,0 +1,4 @@
+#name: should_not be(...)
+#group: rspec
+# --
+${1:target}.should_not be(${2:result})$0
