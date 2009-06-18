@@ -1,0 +1,4 @@
+#name: Inline Sequence
+#group: factory-girl
+# --
+${1:f}.sequence(${2:field}) { |n| $0 }
