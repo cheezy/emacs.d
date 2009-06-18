@@ -1,0 +1,3 @@
+#name : <%= check_box_tag ... %>
+# --
+<%= check_box_tag "${1:name}"$0 %>
