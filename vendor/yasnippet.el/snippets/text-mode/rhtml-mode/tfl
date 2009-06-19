@@ -1,0 +1,4 @@
+#name : <%= label_tag ... %>
+#group: form_tag Tags
+# --
+<%= label_tag "${1:name}"$0 %>

@@ -1,0 +1,4 @@
+#name : <%= submit_tag ... %>
+#group: form_tag Tags
+# --
+<%= submit_tag "${1:value}"$0 %>

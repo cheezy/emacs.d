@@ -1,0 +1,4 @@
+#name : <%= text_area_tag ... %>
+#group: form_tag Tags
+# --
+<%= text_area_tag "${1:field}"$0 %>

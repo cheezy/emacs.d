@@ -1,0 +1,4 @@
+#name : <%= image_submit_tag ... %>
+#group: form_tag Tags
+# --
+<%= image_submit_tag "${1:source}"$0 %>

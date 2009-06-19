@@ -1,0 +1,6 @@
+#name : <% fields_for ... %>
+#group: form_for Tags
+# --
+<% fields_for ${1:object}$2 do | ${3:field} | %>
+$0$>
+<% end %>
