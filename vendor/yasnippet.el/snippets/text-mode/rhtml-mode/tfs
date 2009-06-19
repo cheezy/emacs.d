@@ -1,4 +1,4 @@
 #name : <%= select_tag ... %>
 #group: form_tag Tags
 # --
-<%= select_tag "${1:field}", "<option>${2:option}</option>"$0 %>
+<%= select_tag "${1:field}", "<option>${2:option}</option>$0" %>
