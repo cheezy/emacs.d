@@ -1,3 +1,4 @@
 #name : <%= text_field_tag ... %>
+#group: form_tag Tags
 # --
 <%= text_field_tag "${1:field}"$0 %>

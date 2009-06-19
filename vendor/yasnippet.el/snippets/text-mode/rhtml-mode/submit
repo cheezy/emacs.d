@@ -1,3 +1,4 @@
 #name : <%= f.submit ... %>
+#group: form_for Tags
 # --
 <%= f.submit $1 %>$0

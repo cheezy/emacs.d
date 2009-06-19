@@ -1,3 +1,4 @@
 #name : <%= f.radio_button ... %>
+#group: form_for Tags
 # --
 <%= f.radio_button :${1:attribute}, :${2:tag_value} %>

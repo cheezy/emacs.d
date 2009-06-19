@@ -1,3 +1,4 @@
 #name : <%= f.hidden_field ... %>
+#group: form_for Tags
 # --
 <%= f.hidden_field :${1:attribute} %>

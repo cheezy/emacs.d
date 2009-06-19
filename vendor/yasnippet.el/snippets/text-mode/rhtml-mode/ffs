@@ -1,3 +1,4 @@
 #name : <%= f.select ... %>
+#group: form_for Tags
 # --
 <%= f.select :${1:field} %>

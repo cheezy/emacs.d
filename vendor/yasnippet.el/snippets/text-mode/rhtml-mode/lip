@@ -1,3 +1,4 @@
 #name : <%= link_to "<path>" %>
+#group: General
 # --
 <%= link_to "${1:title}", "${2:path}" %>$0

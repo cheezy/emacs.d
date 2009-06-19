@@ -1,3 +1,4 @@
 #name : <%= f.check_box ... %>
+#group: form_for Tags
 # --
 <%= f.check_box :${1:attribute} %>

@@ -1,3 +1,4 @@
 #name : <%= f.text_area ... %>
+#group: form_for Tags
 # --
 <%= f.text_area :${1:field} %>

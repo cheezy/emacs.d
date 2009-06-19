@@ -1,4 +1,5 @@
 #name : <%= link_to image_tag(...) %>
+#group: General
 # --
 <%= link_to image_tag("${1:image}"$2),
  $>${3:link} %>$0

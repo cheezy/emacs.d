@@ -1,3 +1,4 @@
 #name : <%= link_to "...", :controller => "...", :action => "..." %>
+#group: General
 # --
 <%= link_to "${1:title}", :controller => "${2:items}", :action => "${3:index}" %>$0

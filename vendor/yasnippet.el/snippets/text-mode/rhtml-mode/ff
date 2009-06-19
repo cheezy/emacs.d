@@ -1,4 +1,5 @@
 #name : <% form_for ... %>
+#group: form_for Tags
 # --
 <% form_for ${1:object} do | f | %>
 $0$>

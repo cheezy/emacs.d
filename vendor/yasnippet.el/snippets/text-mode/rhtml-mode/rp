@@ -1,3 +1,4 @@
 #name : <%= render(:partial => ...) %>
+#group: General
 # --
 <%= render :partial => "${1:name}"$0 %>

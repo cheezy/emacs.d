@@ -1,4 +1,5 @@
 #name : <% form_tag(:action => "...") do %> ... <% end %>
+#group: form_tag Tags
 # --
 <% form_tag(:action => "${1:update}") do %>
 $0$>

@@ -1,4 +1,5 @@
 #name : <% if ... -%> ... <% end -%>
+#group: General
 # --
 <% if ${1:cond} -%>
 $0$>

@@ -1,3 +1,4 @@
 #name : <%= f.password_field ... %>
+#group: form_for Tags
 # --
 <%= f.password_field :${1:field} %>
