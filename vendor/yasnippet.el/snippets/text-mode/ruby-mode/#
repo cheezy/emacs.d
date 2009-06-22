@@ -1,4 +1,4 @@
-#name : # =>
+#name : #{...}
 #group : general
 # --
 #{$0} 
