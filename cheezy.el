@@ -1,3 +1,4 @@
+
 ;; CHEEZY settings
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
@@ -64,6 +65,9 @@
 (require 'whitespace)
 
 ;; Major Modes
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/scala"))
+(require 'scala-mode-auto)
 
 ;; Javascript
 (autoload 'js2-mode "js2" nil t)
