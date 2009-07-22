@@ -167,6 +167,8 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 
+(require 'carbon-font)
+
 
 ;; theme-start
 (defun cheezy-reload-theme ()

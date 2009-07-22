@@ -1,8 +1,8 @@
 #name: Spec::Matchers.define ...
 #group : rspec
 # --
-Spec::Matchers.define :${1:method_name} do |expected|
-match do |actual|$>
+Spec::Matchers.define :${1:method_name} do |actual|
+match do |expected|$>
 $0$>
 end$>
 end

@@ -1,0 +1,4 @@
+#name : redirect_to controller action
+#group : general
+# --
+redirect_to :controller => "${1:cont}", :action => "${2:act}" 
