@@ -46,8 +46,8 @@
 
 ;; Cucumber
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
-(autoload 'feature-mode "cucumber-mode" "major mode for editing plaint ext stories" t)
-(add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
+(autoload 'feature-mode "feature-mode" "major mode for editing plaint text stories" t)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; Major Modes
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/scala"))
