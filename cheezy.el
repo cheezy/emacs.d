@@ -49,6 +49,10 @@
 (autoload 'feature-mode "cucumber-mode" "major mode for editing plaint ext stories" t)
 (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
 
+;; Major Modes
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/scala"))
+(require 'scala-mode-auto)
+
 ;; Snippets
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet.el"))
 (require 'yasnippet)
@@ -63,11 +67,6 @@
 (require 'textmate)
 (textmate-mode)
 (require 'whitespace)
-
-;; Major Modes
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/scala"))
-(require 'scala-mode-auto)
 
 ;; Javascript
 (autoload 'js2-mode "js2" nil t)
