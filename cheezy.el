@@ -49,7 +49,7 @@
 (autoload 'feature-mode "feature-mode" "major mode for editing plaint text stories" t)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
-;; Major Modes
+;; Scala
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/scala"))
 (require 'scala-mode-auto)
 
@@ -66,6 +66,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/textmate.el"))
 (require 'textmate)
 (textmate-mode)
+
 (require 'whitespace)
 
 ;; Javascript
@@ -75,6 +76,7 @@
 
 (require 'textile-mode)
 (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
+
 (autoload 'markdown-mode "markdown-mode.el"
   "Major mode for editing Markdown files" t)
 
@@ -167,6 +169,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 
 (require 'carbon-font)
+(prefer-coding-system 'utf-8)
 
 
 ;; theme-start
