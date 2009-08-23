@@ -1,7 +1,9 @@
 #name: Feature: Name
 # --
 Feature: ${1:Name}
-  In order to ${2:get some business value}
-  ${3:Role} will need ${4:this sweet new feature}
+
+  As a ${2:Role}
+  I want ${3:to do something}
+  So that ${4:I get some business value}
 
   $0
