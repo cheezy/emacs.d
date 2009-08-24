@@ -1,0 +1,4 @@
+#name: should include(...)
+#group : rspec
+# --
+${1:target}.should include($2)$0
