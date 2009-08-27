@@ -1,0 +1,4 @@
+#name: and_throw
+#group : rspec.mock
+# --
+and_throw(${1:sym})$0

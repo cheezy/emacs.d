@@ -1,4 +1,4 @@
 #name: should_receive
-#group : rspec
+#group : rspec.mock
 # --
 ${1:mock}.should_receive(:${2:message})$0

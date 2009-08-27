@@ -1,0 +1,6 @@
+#name: it "should ... " do ... end
+#group : rspec
+# --
+it "${1:should do something}" do
+$0$>
+end

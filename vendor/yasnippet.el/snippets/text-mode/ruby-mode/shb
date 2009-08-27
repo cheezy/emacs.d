@@ -1,4 +1,4 @@
 #name: should be(...)
-#group: rspec
+#group: rspec.should
 # --
 ${1:target}.should be(${2:result})$0

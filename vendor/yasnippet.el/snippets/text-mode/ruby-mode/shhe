@@ -1,4 +1,4 @@
 #name: should have_error
-#group: rspec
+#group: rspec.should
 # --
 ${1:target}.should have(${2:1}).error_on(:${3:name})$0

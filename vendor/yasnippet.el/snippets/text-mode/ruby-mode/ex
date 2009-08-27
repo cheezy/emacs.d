@@ -1,0 +1,4 @@
+#name: exactly
+#group : rspec.mock
+# --
+exactly(${1:n}).times$0

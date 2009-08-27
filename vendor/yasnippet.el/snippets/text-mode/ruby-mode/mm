@@ -1,6 +1,4 @@
-#name : def method_missing ... end
-#group : definitions
+#name: mock_model(...)
+#group : rspec.mock
 # --
-def method_missing(method, *args)
-  $0
-end
+mock_model(${Cls})

@@ -1,4 +1,4 @@
 #name: should redirect_to(...)
-#group: rspec
+#group: rspec.should
 # --
 ${1:target}.should redirect_to(${2:url})$0

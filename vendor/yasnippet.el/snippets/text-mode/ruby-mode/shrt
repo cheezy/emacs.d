@@ -1,4 +1,4 @@
 #name: should render_template(...)
-#group: rspec
+#group: rspec.should
 # --
 ${1:target}.should render_template(${2:template})$0

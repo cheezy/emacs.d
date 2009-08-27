@@ -1,0 +1,4 @@
+#name: should_not_receive
+#group : rspec.mock
+# --
+${1:mock}.should_not_receive(:${2:message})$0

@@ -1,4 +1,4 @@
 #name: should have_selector
-#group : rspec
+#group : rspec.should
 # --
 ${1:response}.should have_selector($2) $0

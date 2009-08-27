@@ -1,0 +1,4 @@
+#name: and_raise
+#group : rspec.mock
+# --
+and_raise(${1:exception})$0

@@ -1,4 +1,4 @@
 #name: should include(...)
-#group : rspec
+#group : rspec.should
 # --
 ${1:target}.should include($2)$0

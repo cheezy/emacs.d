@@ -1,0 +1,4 @@
+#name: and_return with args
+#group : rspec.mock
+# --
+and_return(${1:value})$0
