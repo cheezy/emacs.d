@@ -1,0 +1,4 @@
+#name: Require spec_helper
+#group : rspec
+# --
+require File.expand_path(File.dirname(__FILE__) + '$1/../spec_helper')$0
