@@ -1,6 +1,0 @@
-#name: method
-#group : Declarations.Methods
-# --
-${1:def} ${2:methodName}(${3:args}) {
-$0$>
-}

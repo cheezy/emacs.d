@@ -1,0 +1,6 @@
+#name:  method
+#group : Declarations.Methods
+# --
+def ${1:methodName}(${2:args}) {
+$0$>
+}

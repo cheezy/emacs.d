@@ -1,6 +1,0 @@
-#name: static final method
-#group : Declarations.Methods
-# --
-static final ${1:void} ${2:methodName}(${3:args}) {
-$0$>
-}
