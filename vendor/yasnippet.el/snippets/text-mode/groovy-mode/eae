@@ -1,0 +1,6 @@
+#name: each { entry -> ... }
+#group : Iteration.Maps
+# --
+each { ${1:entry} ->
+$0$>
+}

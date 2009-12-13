@@ -1,4 +1,4 @@
 #name: collect { ... }
-#group : Iteration.Collections
+#group : Iteration.List
 # --
 collect { $0 }

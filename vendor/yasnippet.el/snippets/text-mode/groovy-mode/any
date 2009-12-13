@@ -1,6 +1,6 @@
-#name: any { ... }
-#group : Iteration.Collections
+#name: any { key, value -> ... }
+#group : Iteration.Maps
 # --
-any { ${1:obj} ->
+any { ${1:key}, ${2:value} ->
 $0$>
 }

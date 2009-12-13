@@ -1,6 +1,0 @@
-#name: eachWithIndex { ... }
-#group : Iteration.Collections
-# --
-eachWithIndex { ${1:obj}, ${2:i} ->
-$0$>
-}

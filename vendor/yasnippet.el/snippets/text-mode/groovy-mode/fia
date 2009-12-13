@@ -1,4 +1,4 @@
 #name: findAll { ... }
-#group : Iteration.Collections
+#group : Iteration.List
 # --
 findAll { $0 }

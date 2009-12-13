@@ -1,0 +1,4 @@
+#name : find { |...| ... }
+#group : collections
+# --
+find { |${i}| $0 }
