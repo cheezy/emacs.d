@@ -1,6 +1,6 @@
 #name:  method
 #group : Declarations.Methods
 # --
-def ${1:methodName}(${2:args}) {
+def ${1:methodName}($2) {
 $0$>
 }

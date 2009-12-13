@@ -1,6 +1,6 @@
 #name: static method
 #group : Declarations.Methods
 # --
-static ${1:void} ${2:methodName}(${3:args}) {
+static ${1:void} ${2:methodName}($3) {
 $0$>
 }
