@@ -1,0 +1,4 @@
+#name: isNotEqualTo
+#group : easyb.Ensure
+# --
+isNotEqualTo

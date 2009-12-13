@@ -1,0 +1,4 @@
+#name: contains(...)
+#group : easyb.Ensure
+# --
+contains($0)

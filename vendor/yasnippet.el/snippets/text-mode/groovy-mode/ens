@@ -1,0 +1,4 @@
+#name: ensure(..) {  ... }
+#group : easyb.Ensure
+# --
+ensure(${1:what}) { $0 }

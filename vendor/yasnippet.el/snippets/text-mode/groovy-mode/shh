@@ -1,0 +1,4 @@
+#name: shouldHave ...
+#group : easyb.Should
+# --
+shouldHave ${1:item}$0

@@ -1,0 +1,4 @@
+#name: shouldBe ...
+#group : easyb.Should
+# --
+shouldBe ${1:something}$0
