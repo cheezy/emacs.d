@@ -1,4 +1,4 @@
-#name: each { ... }
+#name: find { ... }
 #group : Iteration.Collections
 # --
-each { $0 }
+find { $0 }
