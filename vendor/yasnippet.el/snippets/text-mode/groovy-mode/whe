@@ -1,0 +1,6 @@
+#name: when "something happens" { ... }
+#group : easyb.Story
+# --
+when "${1:a when statement}", {
+$0$>
+}

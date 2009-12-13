@@ -1,0 +1,6 @@
+#name: then "some result" { ... }
+#group : easyb.Story
+# --
+then "${1:a then statement}", {
+$0$>
+}

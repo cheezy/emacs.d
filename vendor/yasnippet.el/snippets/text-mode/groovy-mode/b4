@@ -1,0 +1,6 @@
+#name: before "desc"  { ... }
+#group : easyb
+# --
+before "${1:description}", {
+$0$>
+}

@@ -1,0 +1,4 @@
+#name: description "some description" 
+#group : easyb.Spec
+# --
+description "${1:some desctiption}"

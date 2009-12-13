@@ -1,0 +1,6 @@
+#name: given "should do something" { ... }
+#group : easyb.Story
+# --
+given "${1:a given statement}", {
+$0$>
+}

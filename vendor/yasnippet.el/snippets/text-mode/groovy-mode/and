@@ -1,0 +1,6 @@
+#name: and "and something else" { ... }
+#group : easyb.Story
+# --
+and "${1:an and statement}", {
+$0$>
+}

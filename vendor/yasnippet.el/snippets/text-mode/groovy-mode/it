@@ -1,0 +1,6 @@
+#name: it "should do something" { ... }
+#group : easyb.Spec
+# --
+it "${1:should do something}", {
+$0$>
+}

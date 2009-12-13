@@ -1,0 +1,6 @@
+#name: scenario "scenario description" { ... }
+#group : easyb.Story
+# --
+scenario "${1:scenario description}", {
+$0$>
+}

@@ -1,0 +1,8 @@
+#name: narrative "narative desctiption" { ... }
+#group : easyb.Story
+# --
+narrative "${1:narrative descrtiption}", {
+as a "${2:role}"$>
+i want "${3:to do something}"$>
+so that "${4:i get some result}"$>
+}$0
