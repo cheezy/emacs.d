@@ -1,0 +1,4 @@
+#name: <property>: <value>
+#group : Declarations
+# --
+${1:property}: ${2:value}$0

@@ -1,0 +1,6 @@
+#name: identity
+#group : Declarations
+# --
+identity {
+$0$>
+}
