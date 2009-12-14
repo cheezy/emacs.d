@@ -1,4 +1,0 @@
-#name: static var
-#group : Declarations.Variables
-# --
-static ${1:String} ${2:var} ${3:= null}$0

@@ -1,4 +1,0 @@
-#name: assertTrue
-#group : Declarations.Testing.Assertions
-# --
-assertTrue("${1:message}", ${2:test})$0

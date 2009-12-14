@@ -1,4 +1,0 @@
-#name: assertFalse
-#group : Declarations.Testing.Assertions
-# --
-assertFalse("${1:message}", ${2:test})$0

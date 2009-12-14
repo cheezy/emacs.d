@@ -1,6 +1,0 @@
-#name: setUp
-#group : Declarations.Testing
-# --
-void setUp() {
-$0$>
-}

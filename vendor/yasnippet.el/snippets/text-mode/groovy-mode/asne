@@ -1,4 +1,0 @@
-#name: assertNotEquals
-#group : Declarations.Testing.Assertions
-# --
-assertNotEquals("${1:message}", ${2:unexpected}, ${3:actual})$0

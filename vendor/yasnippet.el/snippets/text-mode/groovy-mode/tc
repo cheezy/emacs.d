@@ -1,6 +1,0 @@
-#name: class ... extends GroovyTestCase
-#group : Declarations.Testing
-# --
-class ${1:testClassName} extends GroovyTestCase {
-$0$>
-}

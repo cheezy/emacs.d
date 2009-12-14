@@ -1,6 +1,0 @@
-#name: tearDown
-#group : Declarations.Testing
-# --
-void tearDown() {
-$0$>
-}

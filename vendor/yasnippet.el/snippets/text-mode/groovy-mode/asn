@@ -1,4 +1,0 @@
-#name: assertNull
-#group : Declarations.Testing.Assertions
-# --
-assertNull("${1:message}", ${2:instance})$0

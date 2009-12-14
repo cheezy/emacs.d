@@ -1,4 +1,0 @@
-#name: assertSame
-#group : Declarations.Testing.Assertions
-# --
-assertSame("${1:message}", ${2:expected}, ${3:actual})$0

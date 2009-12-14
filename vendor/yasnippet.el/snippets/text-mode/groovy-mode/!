@@ -1,4 +1,0 @@
-#name: assert
-#group : Declarations
-# --
-assert ${1:test} : "${2:Failure message}"

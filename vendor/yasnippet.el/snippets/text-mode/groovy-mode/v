@@ -1,4 +1,0 @@
-#name: var
-#group : Declarations.Variables
-# --
-${1:def} ${2:var} ${3:= null}$0
