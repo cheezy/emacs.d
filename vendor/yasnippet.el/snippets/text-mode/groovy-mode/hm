@@ -1,4 +1,4 @@
 #name: hasMany
 #group : Grails.GORM
 # --
-static hasMany = [${1:items}:${2:ClassName}]$0
+static hasMany = [${1:items}: ${2:ClassName}]$0

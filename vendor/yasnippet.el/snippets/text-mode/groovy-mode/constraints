@@ -1,6 +1,0 @@
-#name: constraints
-#group : Grails.GORM
-# --
-static constraints = {
-$0$>
-}

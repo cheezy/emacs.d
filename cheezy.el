@@ -31,6 +31,7 @@
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
 ;; Rinari
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/jump.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
 (require 'rinari)
 (define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
@@ -43,6 +44,9 @@
 (require 'rhtml-mode)
 (add-hook 'rhtml-mode-hook
      	  (lambda () (rinari-launch)))
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
+(require 'rspec-mode)
 
 ;; Cucumber
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
@@ -70,8 +74,10 @@
 (require 'whitespace)
 
 ;; Javascript
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(setq js2-basic-offset 2)
+(setq js2-auto-indent-flag nil)
+(setq javascript-indent-level 2)
+(require 'topfunky-js)
 
 
 (require 'textile-mode)
@@ -79,6 +85,7 @@
 
 (autoload 'markdown-mode "markdown-mode.el"
   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.mdown\\'" . markdown-mode))
 
 (require 'haml-mode)
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))

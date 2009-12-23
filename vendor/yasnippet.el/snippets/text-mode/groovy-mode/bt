@@ -1,4 +1,4 @@
 #name: belongsTo
 #group : Grails.GORM
 # --
-static hasMany = [${1:ClassName}]$0
+static belongsTo = ${1:ClassName}$0
