@@ -32,10 +32,27 @@
 (defvar backup-dir (concat "/tmp/emacs-backups/" (user-login-name) "/"))
 (setq backup-directory-alist (list (cons "." backup-dir)))
 
+;; Makes load time faster.
+(defun byte-recompile-home ()
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d" 0))
+
+(setq default-tab-width 4)
+(setq tab-width 4)
+
 ;; Open current file in TextMate
 (defun textmate-open-buffer ()
   (interactive)
   (shell-command-to-string (concat "mate " buffer-file-name)))
+
+;; Plain Text
+;;; Stefan Monnier <foo at acm.org>. It is the opposite of
+;;; fill-paragraph. Takes a multi-line paragraph and makes
+;;; it into a single line of text.
+(defun unfill-paragraph ()
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
 
 (defun refresh-file ()
   (interactive)
@@ -69,8 +86,16 @@
 
 ;; Cucumber
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
-(autoload 'feature-mode "feature-mode" "major mode for editing plaint text stories" t)
+(require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+;; Cucumber menu
+(setq feature-mode-imenu-generic-expression
+      '(("Group" "\\s-*\\(\\(Feature\\|Scenario\\): .+\\)" 1)
+        ))
+(add-hook 'feature-mode-hook
+          (lambda ()
+            (setq imenu-generic-expression feature-mode-imenu-generic-expression)))
+
 
 ;; Scala
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/scala"))
@@ -120,9 +145,6 @@
 ;; gist
 (require 'gist)
 
-;; Font
-;;(set-face-font 'default "-apple-inconsolata-medium-r-normal--20-0-72-72-m-0-iso10646-1")
-
 ;; ColorThemes
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (require 'color-theme)
@@ -168,6 +190,9 @@
 (global-set-key [(meta shift up)] 'recentf-ido-find-file)
 (global-set-key [(meta shift down)] 'ido-find-file)
 (global-set-key [(meta shift left)] 'magit-status)
+
+(global-set-key [(control shift left)] 'previous-buffer)
+(global-set-key [(control shift right)] 'next-buffer)
 
 (global-set-key [(meta H)] 'delete-other-windows)
 (global-set-key [(meta D)] 'backward-kill-word)
