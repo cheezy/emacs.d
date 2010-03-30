@@ -1,4 +1,4 @@
 #name : <%= f.label ... %>
 #group: form_for Tags
 # --
-<%= f.label :${1:field}, "${2:label}" %>$0
+<%= f.label :${1:field}$2 %>$0

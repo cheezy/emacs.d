@@ -1,0 +1,6 @@
+#name : each_pair do |key,value| ... end
+#group : collections
+# --
+each_pair do |key, value| 
+$>$0
+end
