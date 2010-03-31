@@ -1,0 +1,4 @@
+#name : <%= stylesheet_link_tag ...  %>
+#group: General
+# --
+<%= stylesheet_link_tag "$1", :media => "${2:all}" %>$0

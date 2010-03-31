@@ -1,4 +1,4 @@
 #name : <%= image_tag(...) %>
 #group: General
 # --
-<%= image_tag("${1:image_name}", ${2:options}) %>$0
+<%= image_tag(${1:image_name}) %>$0

@@ -1,0 +1,5 @@
+#name : <span id="...">...</span>
+# --
+<span id="$1">
+  $0
+</span>
