@@ -1,0 +1,3 @@
+#name : $.. = Test::MockObject->new();
+# --
+$${1:mock} = Test::MockObject->new();

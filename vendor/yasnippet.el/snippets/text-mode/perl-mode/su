@@ -1,0 +1,5 @@
+#name : sub set_up  { ... }
+# --
+sub set_up {
+$0$>
+}

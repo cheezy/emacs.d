@@ -1,0 +1,5 @@
+#name : sub tear_down { ... }
+# --
+sub tear_down {
+$0$<
+}

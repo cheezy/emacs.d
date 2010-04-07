@@ -1,0 +1,3 @@
+#name : unlike( ...)
+# --
+unlike(${1:actual}, gr/${2:not_expected}/, '${3:description}');$>

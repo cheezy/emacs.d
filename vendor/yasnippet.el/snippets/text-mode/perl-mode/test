@@ -1,0 +1,5 @@
+#name : test '...', sub { ... }
+# --
+test "${1:description}" => sub {
+$0$>
+}

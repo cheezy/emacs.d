@@ -1,0 +1,3 @@
+#name : like( ...)
+# --
+like(${1:actual}, gr/${2:expected}/, '${3:description}');$>

@@ -1,0 +1,3 @@
+#name : isa_ok( ...)
+# --
+isa_ok(${1:obj}, ${2:class});$>
