@@ -1,3 +1,4 @@
 #name : $.. = Test::MockObject->new();
+#group : Test::MockObject
 # --
 $${1:mock} = Test::MockObject->new();

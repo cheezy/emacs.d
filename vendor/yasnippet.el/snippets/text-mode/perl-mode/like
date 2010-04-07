@@ -1,3 +1,4 @@
 #name : like( ...)
+#group : Test::More
 # --
 like(${1:actual}, gr/${2:expected}/, '${3:description}');$>

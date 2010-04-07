@@ -1,3 +1,4 @@
 #name : $..->fake_module('...');
+#group : Test::MockObject
 # --
 $${1:mock}.fake_module('${2:obj}');

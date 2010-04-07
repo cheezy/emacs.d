@@ -1,3 +1,4 @@
 #name : ok( ...)
+#group : Test::More
 # --
 ok(${1:test}, '${2:description}');$>

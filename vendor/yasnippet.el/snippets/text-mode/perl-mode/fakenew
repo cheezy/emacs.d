@@ -1,3 +1,4 @@
 #name : $..->fake_new('...');
+#group : Test::MockObject
 # --
 $${1:mock}.fake_new('${2:obj}');

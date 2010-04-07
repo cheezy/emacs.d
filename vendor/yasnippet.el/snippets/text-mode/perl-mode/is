@@ -1,3 +1,4 @@
 #name : is( ...)
+#group : Test::More
 # --
 is(${1:actual}, ${2:expected}, '${3:description}');$>

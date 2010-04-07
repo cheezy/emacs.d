@@ -1,3 +1,4 @@
 #name : isa_ok( ...)
+#group : Test::More
 # --
 isa_ok(${1:obj}, ${2:class});$>

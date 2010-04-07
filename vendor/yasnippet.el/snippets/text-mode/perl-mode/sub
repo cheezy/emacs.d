@@ -1,4 +1,5 @@
 #name : sub ... { ... }
+#group : General
 # --
 sub ${1:function_name} {
     $0
