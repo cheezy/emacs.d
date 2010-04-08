@@ -1,0 +1,4 @@
+#name : $..->set_false('...');
+#group : Test::MockObject
+# --
+$${1:mock}.set_false('${2:method}');

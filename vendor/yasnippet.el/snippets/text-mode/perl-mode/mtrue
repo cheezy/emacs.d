@@ -1,0 +1,4 @@
+#name : $..->set_true('...');
+#group : Test::MockObject
+# --
+$${1:mock}.set_true('${2:method}');

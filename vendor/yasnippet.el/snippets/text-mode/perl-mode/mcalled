@@ -1,0 +1,4 @@
+#name : $..->called('...');
+#group : Test::MockObject
+# --
+$${1:mock}.called('${2:method}');
