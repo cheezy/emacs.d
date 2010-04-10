@@ -7,7 +7,7 @@
 ;;; THIS FILE IS SUBJECT TO CHANGE, AND NOT SUITABLE FOR DISTRIBUTION
 ;;; BY PACKAGE MANAGERS SUCH AS APT, PKGSRC, MACPORTS, &C.
 
-;;; Copyright (c) 2008, Taylor R. Campbell
+;;; Copyright (c) 2008, 2009, Taylor R. Campbell
 ;;;
 ;;; Redistribution and use in source and binary forms, with or without
 ;;; modification, are permitted provided that the following conditions
@@ -239,6 +239,11 @@ Signal an error if no clause matches."
 ;;;###autoload
 (define-minor-mode paredit-mode
   "Minor mode for pseudo-structurally editing Lisp code.
+With a prefix argument, enable Paredit Mode even if there are
+  imbalanced parentheses in the buffer.
+Paredit behaves badly if parentheses are imbalanced, so exercise
+  caution when forcing Paredit Mode to be enabled, and consider
+  fixing imbalanced parentheses instead.
 \\<paredit-mode-map>"
   :lighter " Paredit"
   ;; If we're enabling paredit-mode, the prefix to this code that
@@ -618,6 +623,11 @@ Deprecated: use `paredit-mode' instead."
 
 ;;;; Delimiter Insertion
 
+(defvar paredit-space-delimiter-chars (list ?w ?_ ?\")
+  "Characters for which a space should be inserted between them
+and a delimiter. Set this to (list ?\\\") as a buffer-local value
+for non-lisp languages.")
+
 (eval-and-compile
   (defun paredit-conc-name (&rest strings)
     (intern (apply 'concat strings)))
@@ -779,9 +789,9 @@ If such a comment exists, delete the comment (including all leading
   ;; close the string), do insert a space.
   (and (not (if endp (eobp) (bobp)))
        (memq (char-syntax (if endp (char-after) (char-before)))
-             (list ?w ?_ ?\"
-                   (let ((matching (matching-paren delimiter)))
-                     (and matching (char-syntax matching)))))))
+             (append paredit-space-delimiter-chars
+                     (list (let ((matching (matching-paren delimiter)))
+                             (and matching (char-syntax matching))))))))
 
 (defun paredit-move-past-close-and-reindent (close)
   (let ((open (paredit-missing-close)))
@@ -984,6 +994,7 @@ If the point is in a string or a comment, fill the paragraph instead,
           (paredit-in-comment-p))
       (fill-paragraph argument)
     (save-excursion
+      (end-of-defun)
       (beginning-of-defun)
       (indent-sexp))))
 
@@ -1461,6 +1472,29 @@ With a numeric prefix argument N, do `kill-line' that many times."
 ;;                              nil nil parse-state)
          )
         (t parse-state)))
+
+(defun paredit-copy-as-kill ()
+  "Save in the kill ring the region that `paredit-kill' would kill."
+  (interactive)
+  (save-excursion
+    (if (paredit-in-char-p)
+        (backward-char 2))
+    (let ((beginning (point))
+          (eol (point-at-eol)))
+      (let ((end-of-list-p (paredit-forward-sexps-to-kill beginning eol)))
+        (if end-of-list-p (progn (up-list) (backward-char)))
+        (copy-region-as-kill beginning
+                             (cond (kill-whole-line
+                                    (or (save-excursion
+                                          (paredit-skip-whitespace t)
+                                          (and (not (eq (char-after) ?\; ))
+                                               (point)))
+                                        (point-at-eol)))
+                                   ((and (not end-of-list-p)
+                                         (eq (point-at-eol) eol))
+                                    eol)
+                                   (t
+                                    (point))))))))
 
 ;;;; Cursor and Screen Movement
 
@@ -1823,7 +1857,7 @@ If in a string, move the opening double-quote forward by one
 Automatically reindent the newly barfed S-expression with respect to
   its new enclosing form."
   (interactive)
-  (paredit-lose-if-not-in-sexp 'paredit-forward-slurp-sexp)
+  (paredit-lose-if-not-in-sexp 'paredit-forward-barf-sexp)
   (save-excursion
     (up-list)                           ; Up to the end of the list to
     (let ((close (char-before)))        ;   save and delete the closing
@@ -1895,7 +1929,7 @@ If in a string, move the opening double-quote backward by one
 Automatically reindent the barfed S-expression and the form from which
   it was barfed."
   (interactive)
-  (paredit-lose-if-not-in-sexp 'paredit-forward-slurp-sexp)
+  (paredit-lose-if-not-in-sexp 'paredit-backward-barf-sexp)
   (save-excursion
     (backward-up-list)
     (let ((open (char-after)))

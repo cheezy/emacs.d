@@ -67,7 +67,6 @@
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
 ;; Rinari
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/jump.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
 (require 'rinari)
 (define-key rinari-minor-mode-map [(control meta shift down)] 'rinari-find-rspec)
@@ -120,7 +119,6 @@
 (setq js2-basic-offset 2)
 (setq js2-auto-indent-flag nil)
 (setq javascript-indent-level 2)
-(require 'topfunky-js)
 
 
 (require 'textile-mode)
@@ -134,7 +132,7 @@
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 (define-key haml-mode-map [(control meta down)] 'haml-forward-sexp)
 (define-key haml-mode-map [(control meta up)] 'haml-backward-sexp)
-(define-key haml-mode-map [(control meta left)] 'haml-up-list)
+(define-key haml-mode-map [(control meta left)] 'haml-up-list) 
 (define-key haml-mode-map [(control meta right)] 'haml-down-list)
 
 (require 'sass-mode)
@@ -305,4 +303,4 @@
 
 
 (load (concat dotfiles-dir "cheezy-theme.el"))
-(color-theme-cheezy)
+;;(color-theme-cheezy)
