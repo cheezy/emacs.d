@@ -52,11 +52,16 @@
      (intern (concat (symbol-name x) "-mode"))
      '(("(\\|)" . 'esk-paren-face))))
   (add-hook
-   (intern (concat (symbol-name x) "-mode-hook"))
-   (lambda ()
-     (paredit-mode +1)
-     (idle-highlight +1)
-     (run-coding-hook))))
+   (intern (concat (symbol-name x) "-mode-hook")) 'turn-on-paredit)
+  (add-hook
+   (intern (concat (symbol-name x) "-mode-hook")) 'run-coding-hook))
+
+(eval-after-load 'clojure-mode
+  '(font-lock-add-keywords
+    'clojure-mode `(("(\\(fn\\>\\)"
+                     (0 (progn (compose-region (match-beginning 1)
+                                               (match-end 1) "ƒ")
+                               nil))))))
 
 (provide 'starter-kit-lisp)
 ;; starter-kit-lisp.el ends here

@@ -24,12 +24,14 @@
      (add-to-list 'eshell-command-completions-alist
                   '("gunzip" "gz\\'"))
      (add-to-list 'eshell-command-completions-alist
-                  '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))
-     (add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color)))
+                  '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))))
 
 (defun eshell/cds ()
   "Change directory to the project's root."
   (eshell/cd (locate-dominating-file default-directory "src")))
+
+(defun eshell/find (dir &rest opts)
+  (find-dired dir (mapconcat 'identity opts " ")))
 
 ;; Port features from
 ;; http://blog.peepcode.com/tutorials/2009/shell-method-missing/shell_method_missing.rb
