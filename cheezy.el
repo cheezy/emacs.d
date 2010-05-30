@@ -38,8 +38,8 @@
 (add-hook 'ruby-mode-hook
           (function (lambda ()
                       (flymake-mode)
-                      (linum-mode)
-                      (ruby-complexity-mode)
+;                      (linum-mode)
+;                      (ruby-complexity-mode)
                       )))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
@@ -170,4 +170,4 @@
 
 
 (load (concat dotfiles-dir "cheezy-theme.el"))
-(color-theme-cheezy)
+;(color-theme-cheezy)
