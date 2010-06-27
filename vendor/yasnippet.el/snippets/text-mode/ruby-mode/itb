@@ -1,0 +1,4 @@
+#name: it { ... }
+#group : rspec
+# --
+it { $1 }$0

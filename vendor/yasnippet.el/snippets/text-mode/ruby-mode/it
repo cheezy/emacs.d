@@ -1,6 +1,4 @@
-#name: it "does something " do ... end
+#name: it "does something "
 #group : rspec
 # --
-it "${1:does something}" do
-$0$>
-end
+it "${1:does something}"$0

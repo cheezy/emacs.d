@@ -1,0 +1,4 @@
+#name: let(:name) { ... }
+#group : rspec
+# --
+let(:${1:name}) { $0 }

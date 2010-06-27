@@ -1,0 +1,4 @@
+#name: double(...)
+#group : rspec
+# --
+double(${1:"value"})$0

@@ -1,0 +1,4 @@
+#name: specify { ... }
+#group : rspec
+# --
+specify { $1 }$0
