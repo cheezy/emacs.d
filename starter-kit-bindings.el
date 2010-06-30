@@ -9,13 +9,13 @@
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
 ;; Completion that uses many different methods to find options.
-(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "M-=") 'dabbrev-expand)
 
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
 ;; Turn on the menu bar for exploring new modes
-(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+(global-set-key [f1] 'menu-bar-mode)
 
 ;; Font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -51,10 +51,7 @@
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
 
 ;; Start a regular shell if you prefer that.
-(global-set-key (kbd "C-x M-m") 'shell)
-
-;; If you want to be able to M-x without meta (phones, etc)
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key (kbd "C-x C-m") 'shell)
 
 ;; Fetch the contents at a URL, display it raw.
 (global-set-key (kbd "C-x C-h") 'view-url)
@@ -64,9 +61,6 @@
 
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
-
-;; For debugging Emacs modes
-(global-set-key (kbd "C-c p") 'message-point)
 
 ;; So good!
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -84,10 +78,6 @@
   (lambda () (interactive)
     (let ((case-fold-search isearch-case-fold-search))
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
-
-;; Org
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
 
 (provide 'starter-kit-bindings)
 ;;; starter-kit-bindings.el ends here
