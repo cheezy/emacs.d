@@ -1,0 +1,4 @@
+#name: stub_chain(...)
+#group : rspec
+# --
+stub_chain($1).and_return($2)$0
