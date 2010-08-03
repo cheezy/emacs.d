@@ -1,0 +1,8 @@
+#name: create a test class
+# --
+class ${1:ClassName} extends UnitTestCase {
+$0$>
+}
+
+$test = new $1();
+$test->run(new TextReporter());

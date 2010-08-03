@@ -102,6 +102,10 @@
 (setq js2-auto-indent-flag nil)
 (setq javascript-indent-level 2)
 
+;; php mode
+(autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
+(add-to-list 'auto-mode-alist
+             '("\\.php[34]\\'\\|\\.php\\'\\|\\.phtml\\'" . php-mode))
 
 (require 'textile-mode)
 (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
