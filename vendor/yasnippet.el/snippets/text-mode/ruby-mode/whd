@@ -1,0 +1,4 @@
+#name : wh div
+#group : watir
+# --
+div(:${name}, :${id} => '${value}')$0

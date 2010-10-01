@@ -1,0 +1,4 @@
+#name : wh check_box
+#group : watir
+# --
+check_box(:${name}, :${id} => '${value}')$0

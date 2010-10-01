@@ -1,0 +1,4 @@
+#name : wh link
+#group : watir
+# --
+link(:${name}, :${text} => '${value}')$0

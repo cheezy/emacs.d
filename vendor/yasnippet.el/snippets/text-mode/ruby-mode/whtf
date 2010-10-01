@@ -1,0 +1,4 @@
+#name : wh text_field
+#group : watir
+# --
+text_field(:${name}, :${id} => '${value}')$0

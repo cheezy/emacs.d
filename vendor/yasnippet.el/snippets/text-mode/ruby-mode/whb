@@ -1,0 +1,4 @@
+#name : wh button
+#group : watir
+# --
+button(:${name}, :${value} => '${value}')$0

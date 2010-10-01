@@ -1,0 +1,4 @@
+#name : wh select_list
+#group : watir
+# --
+select_list(:${name}, :${id} => '${value}')$0

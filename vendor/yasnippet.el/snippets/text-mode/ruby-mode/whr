@@ -1,0 +1,4 @@
+#name : wh radio
+#group : watir
+# --
+radio_button(:${name}, :${id} => '${value}')$0

@@ -1,0 +1,4 @@
+#name : wh cell
+#group : watir
+# --
+cell(:${name}, :${id} => '${value}')$0

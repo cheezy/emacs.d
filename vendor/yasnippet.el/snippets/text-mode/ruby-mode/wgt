@@ -1,4 +1,4 @@
-#name : Watir goto
+#name : goto
 #group : watir
 # --
 @browser.goto('${url}')$0

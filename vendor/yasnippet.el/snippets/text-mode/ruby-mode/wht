@@ -1,0 +1,4 @@
+#name : wh table
+#group : watir
+# --
+table(:${name}, :${id} => '${value}')$0
