@@ -1,0 +1,4 @@
+#name : link
+#group : watir
+# --
+@browser.link(:${text} => '${value}').$0

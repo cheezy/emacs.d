@@ -1,0 +1,4 @@
+#name : select_list
+#group : watir
+# --
+@browser.select_list(:${id} => '${value}').$0

@@ -1,0 +1,4 @@
+#name : Watir goto
+#group : watir
+# --
+@browser.goto('${url}')$0

@@ -1,0 +1,12 @@
+#name : page object
+#group : watir
+# --
+class ${Name}Page
+include WatirHelper$>
+
+def initialize(browser)$>
+@browser = browser$>
+end$>
+
+$0$>
+end
