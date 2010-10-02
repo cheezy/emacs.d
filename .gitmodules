@@ -1,0 +1,3 @@
+[submodule "vendor/cucumber.el"]
+	path = vendor/cucumber.el
+	url = git://github.com/michaelklishin/cucumber.el.git
