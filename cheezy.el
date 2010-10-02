@@ -13,7 +13,6 @@
 
 (require 'config/meta)
 
-
 (require 'config/plain-text)
 
 ;; Snippets
@@ -30,11 +29,10 @@
 
 (require 'whitespace)
 
-
 ;; ruby-mode
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ruby-complexity"))
-(require 'linum)
-(require 'ruby-complexity)
+;(require 'linum)
+;(require 'ruby-complexity)
 (add-hook 'ruby-mode-hook
           (function (lambda ()
                       (flymake-mode)
