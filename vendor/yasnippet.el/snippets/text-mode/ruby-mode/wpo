@@ -4,9 +4,10 @@
 class ${Name}Page
 include WatirHelper$>
 
+$0$>
+
 def initialize(browser)$>
 @browser = browser$>
 end$>
 
-$0$>
 end
