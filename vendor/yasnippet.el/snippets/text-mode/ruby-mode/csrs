@@ -1,0 +1,4 @@
+#name: string regular expression
+#group : cucumber
+# --
+"([^\"]*)"$0

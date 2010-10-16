@@ -1,0 +1,4 @@
+#name: number regular expression
+#group : cucumber
+# --
+"(\d+)"$0

@@ -1,4 +1,4 @@
 #name : table
 #group : watir
 # --
-@browser.table(:${id} => '${value}')$0
+@browser.table(:${id} => ${value}${})$0

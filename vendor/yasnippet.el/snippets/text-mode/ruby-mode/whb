@@ -1,4 +1,4 @@
 #name : wh button
-#group : watir
+#group : watir.watir_helper
 # --
-button(:${name}, :${value} => '${value}')$0
+button(:${name}, :${value} => ${value}${})$0

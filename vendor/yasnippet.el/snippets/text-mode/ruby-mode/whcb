@@ -1,4 +1,4 @@
 #name : wh check_box
-#group : watir
+#group : watir.watir_helper
 # --
-check_box(:${name}, :${id} => '${value}')$0
+check_box(:${name}, :${id} => ${value}${})$0

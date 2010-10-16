@@ -1,4 +1,4 @@
 #name : button
 #group : watir
 # --
-@browser.button(:${value} => '${label}').$0
+@browser.button(:${value} => ${label}${}).$0

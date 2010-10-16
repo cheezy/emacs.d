@@ -1,4 +1,4 @@
 #name : wh link
-#group : watir
+#group : watir.watir_helper
 # --
-link(:${name}, :${text} => '${value}')$0
+link(:${name}, :${text} => ${value}${})$0

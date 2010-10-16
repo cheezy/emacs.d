@@ -1,4 +1,4 @@
 #name : div
 #group : watir
 # --
-@browser.div(:${id} => '${value}').$0
+@browser.div(:${id} => ${value}${}).$0

@@ -1,4 +1,4 @@
 #name : radio
 #group : watir
 # --
-@browser.radio(:${id} => '${value}').$0
+@browser.radio(:${id} => ${value}${}).$0

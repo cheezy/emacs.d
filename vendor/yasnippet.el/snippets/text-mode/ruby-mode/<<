@@ -1,0 +1,6 @@
+#name: $/ do .. end - end of line
+#group : cucumber
+# --
+$/ do $1
+$0$>
+end
