@@ -1,0 +1,6 @@
+#name : each_char do |...| ... end
+#group : collections
+# --
+each_char do |${e}| 
+  $0 
+end

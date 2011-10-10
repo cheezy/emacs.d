@@ -1,0 +1,4 @@
+#name : each_char { |...| ... }
+#group : collections
+# --
+each_char { |${e}| $0 }

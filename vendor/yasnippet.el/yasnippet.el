@@ -392,7 +392,7 @@ This cafn only work when snippets are loaded from files."
 
 (defface yas/field-highlight-face
   '((((class color) (background light)) (:background "DarkSeaGreen1"))
-    (t (:background "DimGrey")))
+    (t (:background "#222222")))
   "The face used to highlight the currently active field of a snippet"
   :group 'yasnippet)
 

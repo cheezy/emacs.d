@@ -1,0 +1,4 @@
+#name : $LOAD_PATH __FILE__
+#group : general
+# --
+$LOAD_PATH.unshift(File.dirname(__FILE__))

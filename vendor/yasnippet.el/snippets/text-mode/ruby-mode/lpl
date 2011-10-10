@@ -1,0 +1,4 @@
+#name : $LOAD_PATH 'lib'
+#group : general
+# --
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
