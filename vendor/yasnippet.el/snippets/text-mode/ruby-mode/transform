@@ -1,0 +1,6 @@
+#name: Transformation
+#group : cucumber
+# --
+Transform /^${1:thing to transform}/$ do $2
+$0$>
+end
