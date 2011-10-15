@@ -1,20 +1,23 @@
+;; DESCRIPTION: cheezy settings
 
-;; CHEEZY settings
-
-(defun set-exec-path-from-shell-PATH ()
-  (let ((path-from-shell 
-         (replace-regexp-in-string "[[:space:]\n]*$" "" 
-                                   (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
-(when (equal system-type 'darwin) (set-exec-path-from-shell-PATH))
-
+;; Manually set PATH for use by eshell, rspec-mode, etc.
+(let ((path))
+  (setq path (concat "~/.gem/ruby/1.8/bin:"
+                     "~/bin:"
+                     "~/src/homebrew/bin:"
+                     "/usr/local/bin:"
+                     "/usr/bin:"
+                     "/bin"))
+  (setenv "PATH" path))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
-(require 'config/meta)
+(require 'cheezy/meta)
 
-(require 'config/plain-text)
+;; Clojure
+;;(eval-after-load 'clojure-mode '(clojure-slime-config))
+
+(require 'cheezy/plain-text)
 
 ;; Snippets
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet.el"))
@@ -26,24 +29,41 @@
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/textmate.el"))
 (require 'textmate)
+(require 'peepopen)
+(require 'cheezy/textmate-ext)
 (textmate-mode)
+(setq ns-pop-up-frames nil)
 
 (require 'whitespace)
 
+(require 'cheezy/python)
+
+(require 'cheezy/coffee)
+(require 'cheezy/jade)
+
 ;; ruby-mode
+(require 'cheezy/sinatra)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ruby-complexity"))
-;(require 'linum)
-;(require 'ruby-complexity)
-(add-hook 'ruby-mode-hook
-          (function (lambda ()
-                      (flymake-mode)
-;                      (linum-mode)
-;                      (ruby-complexity-mode)
-                      )))
+(add-to-list 'auto-mode-alist '("Capfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Isolate\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru\\'"   . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.sake\\'" . ruby-mode))
+
+(require 'linum)
+(require 'ruby-complexity)
+;; (add-hook 'ruby-mode-hook
+;;           (function (lambda ()
+;;                       (flymake-mode)
+;;                       (linum-mode)
+;;                       (ruby-complexity-mode)
+;;                       )))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
 (require 'feature-mode)
-(require 'config/cucumber)
+(require 'cheezy/cucumber)
+
+(require 'cheezy/js)
 
 ;; Remove scrollbars and make hippie expand
 ;; work nicely with yasnippet
@@ -74,103 +94,34 @@
 (add-hook 'find-file-hooks (function (lambda ()
                                        (local-set-key (kbd "TAB") 'indent-or-complete))))
 
+;; dabbrev-case-fold-search for case-sensitive search
 
-(require 'config/rinari)
+(require 'cheezy/rinari)
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
 (require 'rspec-mode)
 
-;; Groovy
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/groovy.el"))
-(autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
-(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
-(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
-
-;; rhtml-mode
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rhtml"))
-(require 'rhtml-mode)
-(add-hook 'rhtml-mode-hook
-     	  (lambda () (rinari-launch)))
-
-;; Scala
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/scala"))
-(require 'scala-mode-auto)
-
-;; Javascript
-(setq js2-basic-offset 2)
-(setq js2-auto-indent-flag nil)
-(setq javascript-indent-level 2)
-
-;; php mode
-(autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
-(add-to-list 'auto-mode-alist
-             '("\\.php[34]\\'\\|\\.php\\'\\|\\.phtml\\'" . php-mode))
-
-(require 'textile-mode)
-(add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
-
-(autoload 'markdown-mode "markdown-mode.el"
-  "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.mdown\\'" . markdown-mode))
-
-(require 'haml-mode)
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
-(define-key haml-mode-map [(control meta down)] 'haml-forward-sexp)
-(define-key haml-mode-map [(control meta up)] 'haml-backward-sexp)
-(define-key haml-mode-map [(control meta left)] 'haml-up-list) 
-(define-key haml-mode-map [(control meta right)] 'haml-down-list)
-
-(require 'sass-mode)
-(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
-
-(add-to-list 'auto-mode-alist '("\\.js\.erb\\'" . ruby-mode))
+(require 'cheezy/applescript)
+(require 'cheezy/org)
+(require 'cheezy/textile)
+(require 'cheezy/markdown)
+(require 'cheezy/haml)
+(require 'cheezy/xcode)
+(require 'cheezy/keyboard)
 
 ;; gist
 (require 'gist)
 
-;; ColorThemes
+;; Mercurial
+;;(require 'mercurial)
+
+;; Color Themes
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (require 'color-theme)
 (color-theme-initialize)
-;; (color-theme-charcoal-black)
 
+;; Activate theme
+(load (concat dotfiles-dir "cheezy/theme.el"))
+(color-theme-cheezy)
 
-;; Send the buffer to inf-ruby buffer
-(defun send-buffer-to-ruby()
-  (interactive)
-  (ruby-send-region-and-go (point-min) (point-max)))
-(global-set-key (kbd "M-j") 'send-buffer-to-ruby)
-
-(require 'config/keyboard)
-
-;; eshell preferences
-(add-hook 'eshell-mode-hook
-          '(lambda nil
-             (let ((path))
-               (setq path "~/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin")
-               (setenv "PATH" path))
-             (local-set-key "\C-u" 'eshell-kill-input)))
-
-(defun eshell/cl ()
-  "Command to clear the eshell buffer."
-  (interactive)
-  (let ((inhibit-read-only t))
-    (erase-buffer)))
-
-
-(require 'carbon-font)
-
-
-;; theme-start
-(defun cheezy-reload-theme ()
-  "Reload the theme"
-  (interactive)
-  (save-buffer)
-  (eval-buffer)
-  (color-theme-cheezy))
-
-(global-set-key [f2] 'cheezy-reload-theme)
-
-
-(load (concat dotfiles-dir "cheezy-theme.el"))
-;(color-theme-cheezy)
+(require 'autotest)

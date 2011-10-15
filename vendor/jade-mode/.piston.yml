@@ -1,0 +1,8 @@
+--- 
+repository_url: https://github.com/brianc/jade-mode.git
+lock: false
+repository_class: Piston::Git::Repository
+format: 1
+handler: 
+  commit: cb82d16486dfd45847c4306273620c020d1518c2
+  branch: master

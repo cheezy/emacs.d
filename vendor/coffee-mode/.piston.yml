@@ -1,0 +1,8 @@
+--- 
+repository_url: git://github.com/defunkt/coffee-mode.git
+lock: false
+repository_class: Piston::Git::Repository
+format: 1
+handler: 
+  commit: 1f9bc1a93e85eb70c46136888d7e30ac1204f71f
+  branch: master
