@@ -8,6 +8,7 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-c") 'kill-ring-save) ;; Copy
+(global-set-key (kbd "M-a") 'mark-whole-buffer)
 
 ;; Keyboard Overrides
 (define-key textile-mode-map (kbd "M-s") 'save-buffer)

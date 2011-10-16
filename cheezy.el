@@ -2,9 +2,8 @@
 
 ;; Manually set PATH for use by eshell, rspec-mode, etc.
 (let ((path))
-  (setq path (concat "~/.gem/ruby/1.8/bin:"
+  (setq path (concat "/opt/local/bin:"
                      "~/bin:"
-                     "~/src/homebrew/bin:"
                      "/usr/local/bin:"
                      "/usr/bin:"
                      "/bin"))
@@ -97,6 +96,7 @@
 ;; dabbrev-case-fold-search for case-sensitive search
 
 (require 'cheezy/rinari)
+(require 'cheezy/rhtml)
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
 (require 'rspec-mode)
