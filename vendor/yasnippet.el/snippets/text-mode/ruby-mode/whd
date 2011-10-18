@@ -1,4 +1,0 @@
-#name : wh div
-#group : watir.watir_helper
-# --
-div(:${name}, :${id} => ${value}${})$0

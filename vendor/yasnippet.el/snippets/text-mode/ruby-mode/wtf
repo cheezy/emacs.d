@@ -1,4 +1,0 @@
-#name : text_field
-#group : watir
-# --
-@browser.text_field(:${id} => ${value}${}).$0

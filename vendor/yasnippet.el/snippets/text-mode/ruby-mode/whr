@@ -1,4 +1,0 @@
-#name : wh radio
-#group : watir.watir_helper
-# --
-radio_button(:${name}, :${id} => ${value}${})$0

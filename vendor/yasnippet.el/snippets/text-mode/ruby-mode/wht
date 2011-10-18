@@ -1,4 +1,0 @@
-#name : wh table
-#group : watir.watir_helper
-# --
-table(:${name}, :${id} => ${value}${})$0

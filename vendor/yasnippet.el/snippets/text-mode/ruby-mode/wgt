@@ -1,4 +1,0 @@
-#name : goto
-#group : watir
-# --
-@browser.goto('http://${url}')$0

@@ -1,4 +1,0 @@
-#name : wh cell
-#group : watir.watir_helper
-# --
-cell(:${name}, :${id} => ${value}${})$0

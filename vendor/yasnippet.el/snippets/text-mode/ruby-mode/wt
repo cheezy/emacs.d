@@ -1,4 +1,0 @@
-#name : table
-#group : watir
-# --
-@browser.table(:${id} => ${value}${})$0

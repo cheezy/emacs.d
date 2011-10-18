@@ -1,4 +1,0 @@
-#name : wh text_field
-#group : watir.watir_helper
-# --
-text_field(:${name}, :${id} => ${value}${})$0

@@ -1,4 +1,0 @@
-#name : wh button
-#group : watir.watir_helper
-# --
-button(:${name}, :${value} => ${value}${})$0

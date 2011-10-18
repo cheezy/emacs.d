@@ -1,4 +1,0 @@
-#name : wh select_list
-#group : watir.watir_helper
-# --
-select_list(:${name}, :${id} => ${value}${})$0

@@ -33,4 +33,6 @@
 
 (global-set-key [(control \])] 'indent-rigidly)
 
+(global-set-key [(meta return)] 'textmate-next-line)
+
 (provide 'cheezy/keyboard)

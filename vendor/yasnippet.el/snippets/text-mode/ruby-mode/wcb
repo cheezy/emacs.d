@@ -1,4 +1,0 @@
-#name : checkbox
-#group : watir
-# --
-@browser.checkbox(:${id} => ${value}${}).$0

@@ -1,4 +1,0 @@
-#name : cell
-#group : watir
-# --
-@browser.cell(:${id} => ${value}${}).$0
