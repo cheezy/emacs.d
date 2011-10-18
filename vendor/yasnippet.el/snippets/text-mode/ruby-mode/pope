@@ -1,0 +1,4 @@
+#name : paragraph_element()
+#group : page-object.element
+# --
+paragraph_element(:${id} => ${value})$0

@@ -1,0 +1,4 @@
+#name : image_element()
+#group : page-object.element
+# --
+image_element(:${id} => ${value})$0

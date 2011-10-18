@@ -1,0 +1,4 @@
+#name : table_element()
+#group : page-object.element
+# --
+table_element(:${id} => ${value})$0

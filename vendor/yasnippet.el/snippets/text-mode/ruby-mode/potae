@@ -1,0 +1,4 @@
+#name : text_area_element()
+#group : page-object.element
+# --
+text_area_element(:${id} => ${value})$0

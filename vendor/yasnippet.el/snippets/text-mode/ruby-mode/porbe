@@ -1,0 +1,4 @@
+#name : radio_button_element()
+#group : page-object.element
+# --
+radio_button_element(:${id} => ${value})$0

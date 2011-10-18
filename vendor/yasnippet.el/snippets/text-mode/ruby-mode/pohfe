@@ -1,0 +1,4 @@
+#name : hidden_field_element()
+#group : page-object.element
+# --
+hidden_field_element(:${id} => ${value})$0

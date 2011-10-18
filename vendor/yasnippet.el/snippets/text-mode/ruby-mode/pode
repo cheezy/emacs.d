@@ -1,0 +1,4 @@
+#name : div_element()
+#group : page-object.element
+# --
+div_element(:${id} => ${value})$0

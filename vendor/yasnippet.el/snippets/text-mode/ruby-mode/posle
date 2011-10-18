@@ -1,0 +1,4 @@
+#name : select_list_element()
+#group : page-object.element
+# --
+select_list_element(:${id} => ${value})$0

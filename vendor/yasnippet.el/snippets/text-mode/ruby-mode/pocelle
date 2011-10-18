@@ -1,0 +1,4 @@
+#name : cell_element()
+#group : page-object.element
+# --
+cell_element(:${id} => ${value})$0

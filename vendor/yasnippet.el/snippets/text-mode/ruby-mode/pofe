@@ -1,0 +1,4 @@
+#name : form_element()
+#group : page-object.element
+# --
+form_element(:${id} => ${value})$0
