@@ -1,0 +1,7 @@
+#name : class Page include PageObject
+#group : page-object
+# --
+class ${classname}
+include PageObject$>
+$0$>
+end

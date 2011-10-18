@@ -1,0 +1,4 @@
+#name : text_field() {}
+#group : page-object.block
+# --
+text_field(:${name}){ |page| ${identifier}}$0

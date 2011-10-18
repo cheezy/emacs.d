@@ -1,0 +1,4 @@
+#name : unordered_list()
+#group : page-object.declare
+# --
+unordered_list(:${name}, :${id} => ${value})$0

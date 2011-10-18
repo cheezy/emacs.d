@@ -1,0 +1,4 @@
+#name : cell()
+#group : page-object.declare
+# --
+cell(:${name}, :${id} => ${value})$0

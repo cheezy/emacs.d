@@ -1,0 +1,4 @@
+#name : link()
+#group : page-object.declare
+# --
+link(:${name}, :${id} => ${value})$0

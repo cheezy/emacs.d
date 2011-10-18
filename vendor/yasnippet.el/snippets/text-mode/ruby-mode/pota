@@ -1,0 +1,4 @@
+#name : text_area()
+#group : page-object.declare
+# --
+text_area(:${name}, :${id} => ${value})$0

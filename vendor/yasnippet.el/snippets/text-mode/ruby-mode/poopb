@@ -1,0 +1,6 @@
+#name : on_page() do ... end
+#group : page-object
+# --
+on_page(${pageobject}) do |page|
+$0$>
+end

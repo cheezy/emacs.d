@@ -1,0 +1,4 @@
+#name : table()
+#group : page-object.declare
+# --
+table(:${name}, :${id} => ${value})$0

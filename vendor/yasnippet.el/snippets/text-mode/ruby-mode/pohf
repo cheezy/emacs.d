@@ -1,0 +1,4 @@
+#name : hidden_field()
+#group : page-object.declare
+# --
+hidden_field(:${name}, :${id} => ${value})$0

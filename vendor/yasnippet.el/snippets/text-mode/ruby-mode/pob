@@ -1,0 +1,4 @@
+#name : button()
+#group : page-object.declare
+# --
+button(:${name}, :${id} => ${value})$0

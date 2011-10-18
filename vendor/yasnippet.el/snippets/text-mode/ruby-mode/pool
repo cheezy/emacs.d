@@ -1,0 +1,4 @@
+#name : ordered_list()
+#group : page-object.declare
+# --
+ordered_list(:${name}, :${id} => ${value})$0

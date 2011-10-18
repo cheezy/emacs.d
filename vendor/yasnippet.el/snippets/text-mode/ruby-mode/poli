@@ -1,0 +1,4 @@
+#name : list_item()
+#group : page-object.declare
+# --
+list_item(:${name}, :${id} => ${value})$0

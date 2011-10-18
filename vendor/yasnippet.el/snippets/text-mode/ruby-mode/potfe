@@ -1,0 +1,4 @@
+#name : text_field_element()
+#group : page-object.element
+# --
+text_field_element(:${name}, :${id} => ${value})$0

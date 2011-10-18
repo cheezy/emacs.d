@@ -1,0 +1,4 @@
+#name : form()
+#group : page-object.declare
+# --
+form(:${name}, :${id} => ${value})$0

@@ -1,0 +1,4 @@
+#name : visit_page()
+#group : page-object
+# --
+visit_page(${pageobject}).$0

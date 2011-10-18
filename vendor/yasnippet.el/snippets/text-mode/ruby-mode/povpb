@@ -1,0 +1,6 @@
+#name : visit_page() do ... end
+#group : page-object
+# --
+visit_page(${pageobject}) do |page|
+$0$>
+end

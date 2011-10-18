@@ -1,0 +1,4 @@
+#name : span()
+#group : page-object.declare
+# --
+span(:${name}, :${id} => ${value})$0

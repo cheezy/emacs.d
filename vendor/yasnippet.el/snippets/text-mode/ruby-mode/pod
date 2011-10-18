@@ -1,0 +1,4 @@
+#name : div()
+#group : page-object.declare
+# --
+div(:${name}, :${id} => ${value})$0

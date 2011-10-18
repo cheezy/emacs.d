@@ -1,0 +1,4 @@
+#name : image()
+#group : page-object.declare
+# --
+image(:${name}, :${id} => ${value})$0

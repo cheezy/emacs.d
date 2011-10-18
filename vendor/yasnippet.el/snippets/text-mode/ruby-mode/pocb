@@ -1,0 +1,4 @@
+#name : checkbox()
+#group : page-object.declare
+# --
+checkbox(:${name}, :${id} => ${value})$0

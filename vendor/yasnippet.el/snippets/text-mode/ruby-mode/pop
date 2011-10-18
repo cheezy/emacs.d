@@ -1,0 +1,4 @@
+#name : paragraph()
+#group : page-object.declare
+# --
+paragraph(:${name}, :${id} => ${value})$0
