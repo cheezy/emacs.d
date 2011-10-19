@@ -59,13 +59,16 @@
 ;; Run Ruby Rake
 (global-set-key [(meta shift r)] 'rake)
 
+(global-set-key [f11] 'ns-toggle-fullscreen)
+
+
 ;; Full screen toggle
-(defun toggle-fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
-                                           nil
-                                         'fullboth)))
-(global-set-key (kbd "M-n") 'toggle-fullscreen)
+;;(defun toggle-fullscreen ()
+;;  (interactive)
+;;  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
+;;                                           nil
+;;                                         'fullboth)))
+;;(global-set-key (kbd "M-n") 'toggle-fullscreen)
 
 (defun recenter-to-top ()
   "Take the current point and scroll it to within a
