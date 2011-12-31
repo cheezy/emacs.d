@@ -33,6 +33,9 @@
 (textmate-mode)
 (setq ns-pop-up-frames nil)
 
+(require 'rvm)
+(rvm-use-default)
+
 (require 'whitespace)
 
 (require 'cheezy/python)
@@ -122,6 +125,6 @@
 
 ;; Activate theme
 (load (concat dotfiles-dir "cheezy/theme.el"))
-(color-theme-cheezy)
+;;(color-theme-cheezy)
 
 (require 'autotest)
