@@ -1,4 +1,4 @@
 #name : link_element()
 #group : page-object.element
 # --
-link_element(:${id} => ${value})$0
+link_element(:${text} => ${value})$0

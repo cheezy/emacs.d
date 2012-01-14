@@ -1,4 +1,4 @@
 #name : button()
 #group : page-object.declare
 # --
-button(:${name}, :${id} => ${value})$0
+button(:${name}, :${value} => ${value})$0

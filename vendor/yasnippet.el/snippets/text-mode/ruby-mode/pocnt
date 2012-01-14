@@ -1,0 +1,4 @@
+#name : continue_navigation_to()
+#group : page-object
+# --
+continue_navigation_to(${pageobject})$0

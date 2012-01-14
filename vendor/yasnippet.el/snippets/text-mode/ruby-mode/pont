@@ -1,0 +1,4 @@
+#name : navigate_to()
+#group : page-object
+# --
+navigate_to(${pageobject})$0

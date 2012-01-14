@@ -1,4 +1,4 @@
 #name : on_page()
 #group : page-object
 # --
-on_page(${pageobject}).$0
+on_page(${pageobject})$0
