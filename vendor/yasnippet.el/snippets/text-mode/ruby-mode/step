@@ -1,6 +1,0 @@
-#name: Step
-#group : cucumber
-# --
-${1:Given} /^${2:step}$/ do $3
-$0$>
-end
