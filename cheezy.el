@@ -36,6 +36,9 @@
 (require 'rvm)
 (rvm-use-default)
 
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 (require 'whitespace)
 
 (require 'cheezy/python)
