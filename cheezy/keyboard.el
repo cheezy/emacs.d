@@ -35,4 +35,7 @@
 
 (global-set-key [(meta return)] 'textmate-next-line)
 
+(global-set-key [(meta +)] 'text-scale-increase)
+(global-set-key [(meta -)] 'text-scale-decrease)
+
 (provide 'cheezy/keyboard)
