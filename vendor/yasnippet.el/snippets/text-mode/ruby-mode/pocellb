@@ -1,0 +1,4 @@
+#name : cell() {}
+#group : page-object.block
+# --
+cell(:${name}) { |page| ${identifier} }$0

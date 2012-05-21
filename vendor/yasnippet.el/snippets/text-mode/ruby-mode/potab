@@ -1,0 +1,4 @@
+#name : text_area() {}
+#group : page-object.block
+# --
+text_area(:${name}) { |page| ${identifier} }$0

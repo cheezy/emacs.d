@@ -1,0 +1,4 @@
+#name : image() {}
+#group : page-object.block
+# --
+image(:${name}) { |page| ${identifier} }$0

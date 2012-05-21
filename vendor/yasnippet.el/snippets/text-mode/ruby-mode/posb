@@ -1,0 +1,4 @@
+#name : span() {}
+#group : page-object.block
+# --
+span(:${name}) { |page| ${identifier} }$0

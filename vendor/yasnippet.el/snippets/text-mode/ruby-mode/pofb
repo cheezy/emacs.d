@@ -1,0 +1,4 @@
+#name : form() {}
+#group : page-object.block
+# --
+form(:${name}) { |page| ${identifier} }$0

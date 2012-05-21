@@ -1,0 +1,4 @@
+#name : table() {}
+#group : page-object.block
+# --
+table(:${name}) { |page| ${identifier} }$0

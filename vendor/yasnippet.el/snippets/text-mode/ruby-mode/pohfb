@@ -1,0 +1,4 @@
+#name : hidden_field() {}
+#group : page-object.block
+# --
+hidden_field(:${name}) { |page| ${identifier} }$0

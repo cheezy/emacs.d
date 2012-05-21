@@ -1,0 +1,4 @@
+#name : button() {}
+#group : page-object.block
+# --
+button(:${name}) { |page| ${identifier} }$0

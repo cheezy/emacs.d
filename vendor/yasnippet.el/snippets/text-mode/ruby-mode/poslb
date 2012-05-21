@@ -1,0 +1,4 @@
+#name : select_list() {}
+#group : page-object.block
+# --
+select_list(:${name}) { |page| ${identifier} }$0

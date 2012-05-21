@@ -1,0 +1,4 @@
+#name : link() {}
+#group : page-object.block
+# --
+link(:${name}) { |page| ${identifier} }$0

@@ -1,0 +1,4 @@
+#name : paragraph() {}
+#group : page-object.block
+# --
+paragraph(:${name}) { |page| ${identifier} }$0

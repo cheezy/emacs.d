@@ -1,0 +1,4 @@
+#name : ordered_list() {}
+#group : page-object.block
+# --
+ordered_list(:${name}) { |page| ${identifier} }$0

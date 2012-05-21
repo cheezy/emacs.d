@@ -1,0 +1,4 @@
+#name : div() {}
+#group : page-object.block
+# --
+div(:${name}) { |page| ${identifier} }$0

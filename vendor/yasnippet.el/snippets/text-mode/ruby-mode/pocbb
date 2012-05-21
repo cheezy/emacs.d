@@ -1,0 +1,4 @@
+#name : checkbox() {}
+#group : page-object.block
+# --
+checkbox(:${name}) { |page| ${identifier} }$0
