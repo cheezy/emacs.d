@@ -130,6 +130,8 @@
 
 ;; Activate theme
 (load (concat dotfiles-dir "cheezy/theme.el"))
+(load (concat dotfiles-dir "cheezy/color-theme-sunburst.el"))
 ;;(color-theme-cheezy)
+(color-theme-tm)
 
 (require 'autotest)
