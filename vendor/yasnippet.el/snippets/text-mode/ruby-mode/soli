@@ -1,0 +1,4 @@
+#name : list_item
+#group : gametel
+# --
+list_item(:${name}, :${text} => ${value})$0

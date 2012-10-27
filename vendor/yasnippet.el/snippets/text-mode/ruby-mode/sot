@@ -1,0 +1,4 @@
+#name : text
+#group : gametel
+# --
+text(:${name}, :${id} => ${value})$0

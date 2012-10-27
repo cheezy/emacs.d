@@ -1,0 +1,7 @@
+#name : class Screen include Gametel
+#group : gametel
+# --
+class ${classname}
+include Gametel$>
+$0$>
+end
