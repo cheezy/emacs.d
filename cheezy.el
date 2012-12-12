@@ -49,20 +49,22 @@
 ;; ruby-mode
 (require 'cheezy/sinatra)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ruby-complexity"))
-(add-to-list 'auto-mode-alist '("Capfile\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Isolate\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.ru\\'"   . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.sake\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile\\'"   . ruby-mode))
+(add-to-list 'auto-mode-alist '("Isolate\\'"   . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile\\'"   . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru\\'"     . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.sake\\'"   . ruby-mode))
+
 
 (require 'linum)
 (require 'ruby-complexity)
-;; (add-hook 'ruby-mode-hook
-;;           (function (lambda ()
-;;                       (flymake-mode)
-;;                       (linum-mode)
-;;                       (ruby-complexity-mode)
-;;                       )))
+ (add-hook 'ruby-mode-hook
+           (function (lambda ()
+                       (flymake-mode)
+                       (linum-mode)
+                       (ruby-complexity-mode)
+                       )))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
 (require 'feature-mode)
