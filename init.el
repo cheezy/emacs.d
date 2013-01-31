@@ -60,12 +60,6 @@
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-config) (load user-specific-config))
 
-;; Benchmarking
-(message "My .emacs loaded in %ds"
-         (destructuring-bind (hi lo ms) (current-time)
-           (- (+ hi lo) (+ (first *emacs-load-start*) (second
-                                                       *emacs-load-start*)))))
-
 
 (provide 'init)
 ;;; init.el ends here
