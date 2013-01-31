@@ -55,21 +55,23 @@
 (add-to-list 'auto-mode-alist '("Guardfile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru\\'"     . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.sake\\'"   . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec\\'"   . ruby-mode))
 
 
-(require 'linum)
+;;(require 'linum)
+;;(global-linum-mode t)
 (require 'ruby-complexity)
  (add-hook 'ruby-mode-hook
            (function (lambda ()
                        (flymake-mode)
-                       (linum-mode)
-                       (ruby-complexity-mode)
                        )))
+;;                       (linum-mode)
+;;                       (ruby-complexity-mode)
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
 (require 'feature-mode)
 (require 'cheezy/cucumber)
-(load-file ".emacs.d/vendor/robot-mode.el")
+;;(load-file ".emacs.d/vendor/robot-mode.el")
 ;;(add-to-list 'auto-mode-alist '("\\.txt\\'" . robot-mode))
 
 (require 'cheezy/js)
