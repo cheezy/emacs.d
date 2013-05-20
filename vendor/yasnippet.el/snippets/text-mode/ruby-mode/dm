@@ -1,0 +1,6 @@
+#name : define_method ${name}
+#group : definitions
+# --
+define_method "${name}" do ${var}
+$0$>
+end

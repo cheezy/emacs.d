@@ -1,0 +1,6 @@
+#name: mock_model(...).as_null_object
+#group : rspec.mock
+# --
+def mock_${type}(stubs={})
+@${type} ||= mock_model(${model}, stubs).as_null_object$>
+end$0$>
