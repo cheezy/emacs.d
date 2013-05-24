@@ -1,0 +1,4 @@
+#name : <%= f.email_field ... %>
+#group: form_for Tags
+# --
+<%= f.email_field :${1:field}$0 %>

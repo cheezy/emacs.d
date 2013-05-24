@@ -1,6 +1,8 @@
 #name: Factory.define
 #group: factory-girl
 # --
-Factory.define(${1:type}) do |f|
+FactoryGirl.define do
+factory :${1:type} do$>
 $0$>
+end$>
 end
