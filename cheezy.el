@@ -11,6 +11,10 @@
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.new/packages/")))
+
 (require 'cheezy/meta)
 
 ;; Clojure
@@ -137,5 +141,8 @@
 (load (concat dotfiles-dir "cheezy/color-theme-sunburst.el"))
 ;;(color-theme-cheezy)
 (color-theme-tm)
+
+(add-to-list 'load-path "~/.emacs.d/elpa/elixir-mode-1.0.0/")
+(require 'elixir-mode)
 
 (require 'autotest)
