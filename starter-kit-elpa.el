@@ -13,6 +13,8 @@
                                    'rvm
                                    'haml-mode
                                    'sass-mode
+                                   'gist
+                                   'textmate
                                    )
   "Libraries that should be installed by default.")
 

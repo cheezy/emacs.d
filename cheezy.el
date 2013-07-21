@@ -30,7 +30,6 @@
 
 (require 'unbound)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/textmate.el"))
 (require 'textmate)
 (require 'peepopen)
 (require 'cheezy/textmate-ext)
@@ -141,7 +140,6 @@
 ;;(color-theme-cheezy)
 (color-theme-tm)
 
-;;(add-to-list 'load-path "~/.emacs.d/elpa/elixir-mode-1.0.0/")
 (require 'elixir-mode)
 
 (load "~/.emacs.d/floobits/floobits.el")
