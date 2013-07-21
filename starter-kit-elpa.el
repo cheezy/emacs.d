@@ -21,6 +21,7 @@
                                    'feature-mode
                                    'applescript-mode
                                    'markdown-mode
+                                   'yaml-mode
                                    )
   "Libraries that should be installed by default.")
 
