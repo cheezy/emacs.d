@@ -23,10 +23,9 @@
 (require 'cheezy/plain-text)
 
 ;; Snippets
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet.el"))
 (require 'yasnippet)
-(yas/initialize)
-(yas/load-directory (concat dotfiles-dir "/vendor/yasnippet.el/snippets"))
+(yas-global-mode 1)
+(yas/load-directory (concat dotfiles-dir "/snippets"))
 
 (require 'unbound)
 
@@ -142,7 +141,9 @@
 ;;(color-theme-cheezy)
 (color-theme-tm)
 
-(add-to-list 'load-path "~/.emacs.d/elpa/elixir-mode-1.0.0/")
+;;(add-to-list 'load-path "~/.emacs.d/elpa/elixir-mode-1.0.0/")
 (require 'elixir-mode)
+
+(load "~/.emacs.d/floobits/floobits.el")
 
 (require 'autotest)

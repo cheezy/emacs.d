@@ -26,6 +26,8 @@
 ;;;                                "jabber"
 ;;;                                "slime"
 ;;;                                "swank-clojure"
+                                   'elixir-mode
+                                   'yasnippet
                                    )
   "Libraries that should be installed by default.")
 
