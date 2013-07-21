@@ -7,29 +7,12 @@
                                    'inf-ruby
                                    ;;'js2-mode
                                    'css-mode
-                               ;; To submit:
-;;;                                "magit"
-;;;                                "paredit"
-;;;                                "clojure-mode"
-;;;                                "yaml"
-;;;                                "haml"
-;;;                                "sass"
-;;;                                "cheat"
-;;;                                "gist"
-;;;                                "html-fontify"
-;;;                                "color-theme"
-;;;                                "color-theme-zenburn"
-;;;                                "color-theme-vivid-chalk"
-                               ;; Complicated ones:
-;;;                                "nxhtml"
-;;;                                "rinari"
-;;;                                "jabber"
-;;;                                "slime"
-;;;                                "swank-clojure"
                                    'elixir-mode
                                    'yasnippet
                                    'rinari
                                    'rvm
+                                   'haml-mode
+                                   'sass-mode
                                    )
   "Libraries that should be installed by default.")
 
