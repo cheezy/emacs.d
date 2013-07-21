@@ -24,6 +24,7 @@
                                    'yaml-mode
                                    'unbound
                                    'php-mode
+                                   'jade-mode
                                    )
   "Libraries that should be installed by default.")
 
