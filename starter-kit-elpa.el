@@ -26,6 +26,8 @@
                                    'php-mode
                                    'jade-mode
                                    'sws-mode
+                                   'flymake-easy
+                                   'flymake-ruby
                                    )
   "Libraries that should be installed by default.")
 
