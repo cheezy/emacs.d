@@ -5,7 +5,6 @@
 (defvar starter-kit-packages (list 'idle-highlight
                                    'ruby-mode
                                    'inf-ruby
-                                   ;;'js2-mode
                                    'css-mode
                                    'elixir-mode
                                    'yasnippet
@@ -15,6 +14,9 @@
                                    'sass-mode
                                    'gist
                                    'textmate
+                                   'rspec-mode
+                                   'groovy-mode
+                                   'jump
                                    )
   "Libraries that should be installed by default.")
 

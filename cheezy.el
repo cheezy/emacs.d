@@ -112,7 +112,6 @@
 
 (require 'cheezy/rhtml)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
 (require 'rspec-mode)
 
 (require 'cheezy/applescript)
