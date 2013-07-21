@@ -141,5 +141,5 @@
 
 (require 'elixir-mode)
 
-(load "~/.emacs.d/floobits/floobits.el")
+(load "~/.emacs.d/floobits-emacs/floobits.el")
 

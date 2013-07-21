@@ -1,0 +1,3 @@
+[submodule "floobits-emacs"]
+	path = floobits-emacs
+	url = https://github.com/Floobits/floobits-emacs.git
