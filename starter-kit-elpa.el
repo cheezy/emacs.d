@@ -29,6 +29,7 @@
                                    'flymake-easy
                                    'flymake-ruby
                                    'magit
+                                   'clojure-mode
                                    )
   "Libraries that should be installed by default.")
 
