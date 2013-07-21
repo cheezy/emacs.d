@@ -28,6 +28,7 @@
                                    'sws-mode
                                    'flymake-easy
                                    'flymake-ruby
+                                   'magit
                                    )
   "Libraries that should be installed by default.")
 
