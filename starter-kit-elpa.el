@@ -19,6 +19,8 @@
                                    'jump
                                    'coffee-mode
                                    'feature-mode
+                                   'applescript-mode
+                                   'markdown-mode
                                    )
   "Libraries that should be installed by default.")
 
