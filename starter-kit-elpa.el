@@ -22,6 +22,8 @@
                                    'applescript-mode
                                    'markdown-mode
                                    'yaml-mode
+                                   'unbound
+                                   'php-mode
                                    )
   "Libraries that should be installed by default.")
 
