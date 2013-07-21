@@ -25,6 +25,7 @@
                                    'unbound
                                    'php-mode
                                    'jade-mode
+                                   'sws-mode
                                    )
   "Libraries that should be installed by default.")
 
