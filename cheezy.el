@@ -111,7 +111,6 @@
 
 ;; dabbrev-case-fold-search for case-sensitive search
 
-(require 'cheezy/rinari)
 (require 'cheezy/rhtml)
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))

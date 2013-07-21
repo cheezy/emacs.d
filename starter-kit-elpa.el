@@ -28,6 +28,8 @@
 ;;;                                "swank-clojure"
                                    'elixir-mode
                                    'yasnippet
+                                   'rinari
+                                   'rvm
                                    )
   "Libraries that should be installed by default.")
 
