@@ -26,6 +26,7 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 (yas/load-directory (concat dotfiles-dir "/snippets"))
+(setq yas-use-menu 'full)
 
 (require 'unbound)
 
