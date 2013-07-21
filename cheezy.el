@@ -71,7 +71,7 @@
 ;;                       (linum-mode)
 ;;                       (ruby-complexity-mode)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber.el"))
+
 (require 'feature-mode)
 (require 'cheezy/cucumber)
 ;;(load-file ".emacs.d/vendor/robot-mode.el")

@@ -17,6 +17,8 @@
                                    'rspec-mode
                                    'groovy-mode
                                    'jump
+                                   'coffee-mode
+                                   'feature-mode
                                    )
   "Libraries that should be installed by default.")
 
