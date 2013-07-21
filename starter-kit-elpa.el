@@ -30,6 +30,8 @@
                                    'flymake-ruby
                                    'magit
                                    'clojure-mode
+                                   'mark-multiple
+                                   'expand-region
                                    )
   "Libraries that should be installed by default.")
 

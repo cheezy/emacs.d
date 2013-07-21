@@ -32,6 +32,10 @@
 (global-set-key [(meta N)] 'cleanup-buffer)
 
 (global-set-key [(control \])] 'indent-rigidly)
+(global-set-key [(control =)] 'er/expand-region)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key [(meta return)] 'textmate-next-line)
 

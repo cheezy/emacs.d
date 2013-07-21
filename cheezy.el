@@ -28,6 +28,9 @@
 (yas/load-directory (concat dotfiles-dir "/snippets"))
 (setq yas-use-menu 'full)
 
+(require 'expand-region)
+(require 'multiple-cursors)
+
 (require 'unbound)
 
 (require 'textmate)
