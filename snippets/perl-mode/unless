@@ -1,6 +1,0 @@
-#name : unless (...) { ... }
-#group : Control Structure
-# --
-unless ($1) {
-    $0
-}

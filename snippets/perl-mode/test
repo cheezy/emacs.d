@@ -1,6 +1,0 @@
-#name : test '...', sub { ... }
-#group : Test::More::Behaviour
-# --
-test "${1:description}" => sub {
-$0$>
-}

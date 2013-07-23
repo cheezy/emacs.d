@@ -1,6 +1,0 @@
-#name : sub set_up  { ... }
-#group : Test::More::Behaviour
-# --
-sub set_up {
-$0$>
-}

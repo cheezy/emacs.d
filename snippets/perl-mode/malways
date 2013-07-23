@@ -1,4 +1,0 @@
-#name : $..->set_always('...');
-#group : Test::MockObject
-# --
-$${1:mock}.set_always('${2:method}' => ${3:value});

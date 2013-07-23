@@ -1,6 +1,0 @@
-#name : if (...) { ... }
-#group : Control Structure
-# --
-if ($1) {
-    $0
-}

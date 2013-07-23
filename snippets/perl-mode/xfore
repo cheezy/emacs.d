@@ -1,4 +1,0 @@
-#name : ... foreach ...
-#group : Control Structure
-# --
-${1:expression} foreach @${2:array};

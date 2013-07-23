@@ -1,4 +1,0 @@
-#name : ... if ...
-#group : Control Structure
-# --
-${1:expression} if ${2:condition}

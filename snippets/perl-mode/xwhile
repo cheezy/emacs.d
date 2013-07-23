@@ -1,4 +1,0 @@
-#name : ... while ...
-#group : Control Structure
-# --
-${1:expression} while ${2:condition};
