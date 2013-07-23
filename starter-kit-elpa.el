@@ -15,16 +15,16 @@
                                    'gist
                                    'textmate
                                    'rspec-mode
-                                   'groovy-mode
+;;                                   'groovy-mode
                                    'jump
                                    'coffee-mode
                                    'feature-mode
-                                   'applescript-mode
+;;                                   'applescript-mode
                                    'markdown-mode
                                    'yaml-mode
                                    'unbound
-                                   'php-mode
-                                   'jade-mode
+;;                                   'php-mode
+;;                                   'jade-mode
                                    'sws-mode
                                    'flymake-easy
                                    'flymake-ruby
@@ -32,6 +32,9 @@
                                    'clojure-mode
                                    'mark-multiple
                                    'expand-region
+                                   'dash
+                                   'ecukes
+                                   'espuds
                                    )
   "Libraries that should be installed by default.")
 

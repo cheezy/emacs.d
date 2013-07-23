@@ -11,7 +11,9 @@
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
-
+(require 'dash)
+(require 'ecukes)
+(require 'espuds)
 (require 'cheezy/meta)
 
 ;; Clojure
