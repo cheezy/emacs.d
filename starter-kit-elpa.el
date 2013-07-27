@@ -15,7 +15,7 @@
                                    'gist
                                    'textmate
                                    'rspec-mode
-;;                                   'groovy-mode
+                                   'groovy-mode
                                    'jump
                                    'coffee-mode
                                    'feature-mode
