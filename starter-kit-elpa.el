@@ -32,6 +32,7 @@
                                    'clojure-mode
                                    'mark-multiple
                                    'expand-region
+                                   'ruby-tools
                                    'dash
                                    'ecukes
                                    'espuds

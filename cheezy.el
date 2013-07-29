@@ -14,6 +14,7 @@
 (require 'dash)
 (require 'ecukes)
 (require 'espuds)
+(require 'ruby-tools)
 (require 'cheezy/meta)
 
 ;; Clojure
