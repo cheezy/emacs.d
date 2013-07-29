@@ -72,6 +72,7 @@
                        )))
 ;;                       (linum-mode)
 ;;                       (ruby-complexity-mode)
+(require 'ruby-refactor)
 
 
 (require 'feature-mode)
