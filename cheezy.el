@@ -70,10 +70,15 @@
  (add-hook 'ruby-mode-hook
            (function (lambda ()
                        (flymake-mode)
-                       )))
-;;                       (linum-mode)
-;;                       (ruby-complexity-mode)
+                       (linum-mode)
+                       (ruby-complexity-mode))))
+
 (require 'ruby-refactor)
+(add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
+(global-set-key (kbd "C-M-m") 'ruby-reactor-extract-to-method)
+(global-set-key (kbd "C-M-l") 'ruby-reactor-extract-local-variable)
+(global-set-key (kbd "C-M-c") 'ruby-reactor-extract-constant)
+(global-set-key (kbd "C-M-p") 'ruby-reactor-add-parameter)
 
 
 (require 'feature-mode)
