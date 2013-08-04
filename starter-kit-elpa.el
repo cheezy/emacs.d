@@ -36,6 +36,7 @@
                                    'dash
                                    'ecukes
                                    'espuds
+                                   'ruby-refactor
                                    )
   "Libraries that should be installed by default.")
 
