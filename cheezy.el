@@ -81,7 +81,12 @@
 (global-set-key (kbd "C-M-p") 'ruby-reactor-add-parameter)
 
 
+(setq feature-use-rvm t)
 (require 'feature-mode)
+(global-set-key (kbd "C-M-a") 'feature-verify-all-scenarios-in-buffer)
+(global-set-key (kbd "C-M-r") 'feature-verify-scenario-at-pos)
+(global-set-key (kbd "C-M-s") 'feature-goto-step-definition)
+
 (require 'cheezy/cucumber)
 ;;(load-file ".emacs.d/vendor/robot-mode.el")
 ;;(add-to-list 'auto-mode-alist '("\\.txt\\'" . robot-mode))
@@ -146,7 +151,7 @@
 (load (concat dotfiles-dir "cheezy/theme.el"))
 (load (concat dotfiles-dir "cheezy/color-theme-sunburst.el"))
 ;;(color-theme-cheezy)
-(color-theme-tm)
+;;(color-theme-tm)
 
 (require 'elixir-mode)
 

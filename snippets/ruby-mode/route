@@ -1,0 +1,6 @@
+#name : Define routes
+#group : page-object
+# --
+PageObject::PageFactory.routes = {
+    :default => [[$0]]
+}

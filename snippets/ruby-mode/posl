@@ -1,4 +1,4 @@
 #name : select_list()
 #group : page-object.declare
 # --
-select_list(:${name}, :${id} => ${value})$0
+select_list(:${name}, ${id}: ${value})$0
