@@ -151,7 +151,7 @@
 (load (concat dotfiles-dir "cheezy/theme.el"))
 (load (concat dotfiles-dir "cheezy/color-theme-sunburst.el"))
 ;;(color-theme-cheezy)
-;;(color-theme-tm)
+(color-theme-tm)
 
 (require 'elixir-mode)
 
